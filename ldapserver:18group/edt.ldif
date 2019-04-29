@@ -1,0 +1,126 @@
+# Llistat total de la organitzacio dc=edt,dc=org
+# @edt 2016
+# M06-ASO
+# -----------------------------------------------
+
+dn: dc=edt,dc=org
+dc: edt
+description: Escola del treball de Barcelona
+objectClass: dcObject
+objectClass: organization
+o: edt.org
+
+dn: ou=profes,dc=edt,dc=org
+ou: profes
+description: Container per a maquines linux
+objectclass: organizationalunit
+
+dn: ou=usuaris,dc=edt,dc=org
+ou: usuaris
+description: Container per usuaris del sistema linux
+objectclass: organizationalunit
+
+dn: ou=hosts,dc=edt,dc=org
+ou: hosts
+description: Container per a hosts linux
+objectclass: organizationalunit
+
+
+# ---------- Usuaris ----------------------------
+
+dn: uid=admin,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: Administrador Sistema
+cn: System Admin
+sn: System
+homephone: 555-222-2225
+mail: anna@edt.org
+description: Watch out for this girl
+ou: system
+ou: admin
+uid: admin
+uidNumber: 10
+gidNumber: 10
+homeDirectory: /tmp/home/admin
+userPassword: {SSHA}4mS0FycWc5bkpW8/a396SGNDTQUlFSX3
+
+
+# ---------- Grups ------------------------------
+
+dn: ou=grups,dc=edt,dc=org
+ou: groups
+description: Container per a grups
+objectclass: organizationalunit
+
+dn: cn=admin,ou=grups,dc=edt,dc=org
+cn: admin
+cn: system
+gidNumber: 10
+description: Grup de administracio system
+memberUid: admin
+objectclass: posixGroup
+
+dn: cn=alumnes,ou=grups,dc=edt,dc=org
+cn: alumnes
+gidNumber: 600
+description: Grup de alumnes
+memberUid: anna
+memberuid: marta
+memberUid: Jordi
+objectclass: posixGroup
+
+dn: cn=profes,ou=grups,dc=edt,dc=org
+cn: profes
+gidNumber: 100
+description: Grup de profes
+memberUid: pau
+memberUid: pere
+objectclass: posixGroup
+
+dn: cn=1wiaw,ou=grups,dc=edt,dc=org
+cn: 1wiaw
+gidNumber: 650
+description: Grup de 1wiaw
+memberUid: mao
+memberUid: ho
+memberUid: hirohito
+memberUid: nelson
+memberUid: robert
+memberUid: ali
+objectclass: posixGroup
+
+dn: cn=2wiaw,ou=grups,dc=edt,dc=org
+cn: 2wiaw
+gidNumber: 651
+description: Grup de 2wiaw
+memberUid: konrad
+memberUid: humphrey
+memberUid: carles
+memberUid: francisco
+memberUid: vladimir
+memberUid: jorge
+objectclass: posixGroup
+
+dn: cn=1asix,ou=grups,dc=edt,dc=org
+cn: 1asix
+gidNumber: 610
+description: Grup de 1asix
+memberUid: user01
+memberUid: user02
+memberUid: user03
+memberUid: user04
+memberUid: user05
+objectclass: posixGroup
+
+dn: cn=2asix,ou=grups,dc=edt,dc=org
+cn: 2asix
+gidNumber: 611
+description: Grup de 2asix
+memberUid: user06
+memberUid: user07
+memberUid: user08
+memberUid: user09
+memberUid: user10
+objectclass: posixGroup
+
