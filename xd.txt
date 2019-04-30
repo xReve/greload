@@ -1,0 +1,21 @@
+dn: uid=sk,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: sk
+sn: pe
+ou: pere
+uid: sk
+uidNumber: 1000
+gidNumber: 1000
+homeDirectory: /home/pere
+- 
+dn: uid=new,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: new
+sn: pe
+ou: pere
+uid: new
+uidNumber: 1001
+gidNumber: 100
+homeDirectory: /home/pere

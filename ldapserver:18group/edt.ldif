@@ -28,8 +28,10 @@ objectclass: organizationalunit
 
 # -------------- Aules ----------------------------
 
-dn: cn=A,ou=aules,dc=edt,dc=org
-objectclass: posixAccount
+#dn: cn=A,ou=aules,dc=edt,dc=org
+#objectclass: posixAccount
+
+# ----------------Hosts----------------------------
 
 
 

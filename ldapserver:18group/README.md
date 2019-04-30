@@ -1,11 +1,9 @@
-# ldapserver:18practica
+# SERVIDOR LDAP 
 
 
-## @edt ASIX M06-ASO Curs 2018-2019
+## @edt ASIX M14-PROJECTE Curs 2018-2019
 
 Servidor ldap amb edt.org, amb usuaris i grups, RDN=uid
-Exercici per practicar tots els conceptes treballats.
-
 
 S'han afegit els grups que són posixGroup i identifiquen als membres del group amb l'atribut memberUid.
 
@@ -19,18 +17,29 @@ description: Container per a grups
 objectclass: organizationalunit
 ```
 
-Entitat grup 2asix:
+Entitat grup **especial**: (Usuaris per defecte)
+
 ```
-dn: cn=2asix,ou=grups,dc=edt,dc=org
-cn: 2asix
-gidNumber: 611
-description: Grup de 2asix
-memberUid: user06
-memberUid: user07
-memberUid: user08
-memberUid: user09
-memberUid: user10
-objectclass: posixGroup
+dn: cn=especial,ou=grups,dc=edt,dc=org
+cn: especial
+gidNumber: 200
+description: Grup d'usuaris especials
+memberUid: pere
+memberUid: anna
+memberUid: marta
+memberUid: pau
+objectClass: posixGroup
+```
+
+Entitat grup **1asix**: (Encara no hi ha usuaris al grup)
+
+```
+dn: cn=1asix,ou=grups,dc=edt,dc=org
+cn: 1asix
+gidNumber: 203
+description: Grup de 1asix
+objectClass: posixGroup
+
 ```
 
 # Afegir 
@@ -66,5 +75,6 @@ memberUid: new
 #### Execució
 
 ```
-$ docker run --rm --name ldap -h ldap --net ldapnet -d edtasixm06/ldapserver:18group
+docker run --rm --name ldap -h ldap --network gandhi-net -d eescriba/ldapserver:greload 
+
 ```

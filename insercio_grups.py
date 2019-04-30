@@ -13,21 +13,36 @@ entrada = open(fileIn,"rw")
 sortida = open(fileOut,"a")
 # err = open(error_log,"a")
 
+# Llegim grup per grup
 for linia in entrada:
 	
+	# Separem camps
 	llista_camps = linia.split(':')
 	gname = llista_camps[0]
 	gid = llista_camps[2]
 	user_list = llista_camps[3]
 	
+	# Creem fitxer ldif
 	line1 = 'dn: cn=%s,ou=grups,dc=edt,dc=org \n' \
-	'cn: %s \n' \
-	'gidNumber: %s \n' \
-	'description: Grup de %s \n'
-	'objectclass: posixGroup \n' 
+	'cn: %s\n' \
+	'gidNumber: %s\n' \
+	'description: Grup de %s\n' \
+	'objectclass: posixGroup\n \n' % (gname,gname,gid,gname)
 	
-dn: cn=2asix,ou=grups,dc=edt,dc=org
-cn: 2asix
-gidNumber: 204
-description: Grup de 2asix
-objectclass: posixGroup
+	# Comprovem si té usuaris que tenen el grup com a secundari
+	#if user_list != '';
+		# En cas que si els afegim conjuntament amb el grup
+	#	for user in user_list:
+	#		line1 += '
+	
+	# Guardem fitxer ldif
+	sortida.write(line1)
+	
+
+# Tancament	
+#err.close()
+entrada.close()
+sortida.close()
+
+	
+	

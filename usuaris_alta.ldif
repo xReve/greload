@@ -1,14 +1,3 @@
-dn: uid=anna,ou=usuaris,dc=edt,dc=org
-objectclass: posixAccount
-objectclass: inetOrgPerson
-cn: anna
-sn: anna
-ou: admin
-uid: anna
-uidNumber: 10
-gidNumber: 10
-homeDirectory: /home/anna
- 
 dn: uid=smmsp,ou=usuaris,dc=edt,dc=org
 objectclass: posixAccount
 objectclass: inetOrgPerson
@@ -19,4 +8,26 @@ uid: smmsp
 uidNumber: 100
 gidNumber: 100
 homeDirectory: /var/spool/mqueue
+ 
+dn: uid=uucp,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: uucp
+sn: uucp
+ou: admin
+uid: uucp
+uidNumber: 10
+gidNumber: 10
+homeDirectory: /var/spool/uucp
+ 
+dn: uid=pere,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: pere
+sn: pere
+ou: pere
+uid: pere
+uidNumber: 1000
+gidNumber: 1000
+homeDirectory: /home/pere
  

@@ -33,7 +33,7 @@ for linia in entrada:
 		gid = llista_camps[3]
 		home = llista_camps[5]
 		# Obtenció del grup
-		search = "ldapsearch -x -LLL -b 'ou=grups,dc=edt,dc=org' -h 172.21.0.2 gidNumber=%s dn | cut -f1 -d ',' | cut -f2 -d ' ' | cut -f2 -d '=' " % (gid)
+		search = "ldapsearch -x -LLL -b 'ou=grups,dc=edt,dc=org' -h 172.18.0.2 gidNumber=%s dn | cut -f1 -d ',' | cut -f2 -d ' ' | cut -f2 -d '=' " % (gid)
 		pipeData = subprocess.Popen([search],stdout=subprocess.PIPE,shell=True)
 		count = 1
 		grup = ''
