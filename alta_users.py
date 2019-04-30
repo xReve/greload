@@ -8,7 +8,7 @@ import os
 
 # Declarem
 fileIn = sys.argv[1] # Usuaris
-fileOut = 'alta.ldif' # Fitxer ldf sortida
+fileOut = 'usuaris_alta.ldif' # Fitxer ldif sortida
 fileOutmod = 'modi.ldif' # Fitxer modificació grup
 error_log = "error.log" # Fitxer errors
 
@@ -43,27 +43,28 @@ for linia in entrada:
 				grup = line 
 				count += 1
 	
-		# Si l'usuari no téun grup a la BBDD no es pot afegir
+		# Si l'usuari no té un grup a la BBDD no es pot afegir
 		if grup == '':
 			err.write('User %s no te un grup existent a la BBDD. Crei el grup i despres afegeix lusuari \n ' % login)
 			denied += 1
 		else:
 		# Edició fitxer ldif per cada usuari
-			line1 = 'dn: uid=%s, ou=usuaris,dc=edt,dc=org \n' \
-			'objectclass: posixAccount \n' \
-			'objectclass: inetOrgPerson \n' \
-			'ou : %s' \
-			'cn: %s \n' \
-			'uid: %s \n' \
-			'uidNumber: %s \n' \
-			'gidNumber: %s \n' \
-			'homeDirectory: %s \n \n' % (login,grup,login,login,uid,gid,home)
+			line1 = 'dn: uid=%s,ou=usuaris,dc=edt,dc=org\n' \
+			'objectclass: posixAccount\n' \
+			'objectclass: inetOrgPerson\n' \
+                        'cn: %s\n' \
+                        'sn: %s\n' \
+                        'ou: %s' \
+			'uid: %s\n' \
+			'uidNumber: %s\n' \
+			'gidNumber: %s\n' \
+			'homeDirectory: %s\n \n' % (login,login,login,grup,login,uid,gid,home)
 			
 			# Guardem al fitxer ldif
 			sortida.write(line1)
 			accept += 1
 	except:
-		err.write('Linia dusuari incorrecta, revisi la linia %s' % (lectura))
+		err.write('Linia dusuari incorrecta, revisi la linia %s \n' % (lectura))
 		denied += 1
 # Tancament	
 err.close()
@@ -71,7 +72,10 @@ entrada.close()
 sortida.close()
 
 print 'Total processats:'
-print 'Acceptats: %s (Consultar alta.ldif)' % accept
+print 'Acceptats: %s (Consultar alta_usuaris.ldif)' % accept
 print 'Denegats: %s (Consultar error.log)' % denied
+
+
+
 
 

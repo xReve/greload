@@ -1,0 +1,22 @@
+dn: uid=anna,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: anna
+sn: anna
+ou: admin
+uid: anna
+uidNumber: 10
+gidNumber: 10
+homeDirectory: /home/anna
+ 
+dn: uid=smmsp,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: smmsp
+sn: smmsp
+ou: profes
+uid: smmsp
+uidNumber: 100
+gidNumber: 100
+homeDirectory: /var/spool/mqueue
+ 

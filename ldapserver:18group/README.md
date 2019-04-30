@@ -43,6 +43,26 @@ ldapmodify -x -w secret -D "cn=Manager,dc=edt,dc=org" -f modify.ldif
 
 ldapdelete -w secret -D 'cn=Manager,dc=edt,dc=org' -f delete.ldif
 
+#
+dn: cn=skeret,ou=grups,dc=edt,dc=org
+cn: skeret
+gidNumber: 333
+description: Grup de 1wiaw
+objectclass: posixGroup
+
+#
+[root@ldap docker]# cat delete.ldif 
+cn=skeret,ou=grups,dc=edt,dc=org
+
+#
+[root@ldap docker]# cat modify.ldif 
+dn: cn=1asix,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: new
+
+
+
 #### Execució
 
 ```
