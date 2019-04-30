@@ -73,7 +73,11 @@ User mongod no te un grup existent a la BBDD. Crei el grup i despres afegeix lus
  User mailnull no te un grup existent a la BBDD. Crei el grup i despres afegeix lusuari 
 ```
 
+Un cop creat el fitxer amb els usuaris valids ja els podrem insertar a la BBDD.
 
+```
+ldapadd -x -w secret -h 172.21.0.2 -D "cn=Manager,dc=edt,dc=org" -f usuaris_alta.ldif
+```
 
 
 **insercio-grups.py** -> Script que processoa fitxers del tipus `/etc/group` i crea la seva entrada per a ldap amb format **ldif**.
