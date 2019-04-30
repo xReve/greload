@@ -1,25 +1,3 @@
-dn: uid=user01,ou=usuaris,dc=edt,dc=org
-objectclass: posixAccount
-objectclass: inetOrgPerson
-cn: user01
-sn: user01
-ou: 1wiaw
-uid: user01
-uidNumber: 2000
-gidNumber: 201
-homeDirectory: /bin/bash
-
-dn: uid=user02,ou=usuaris,dc=edt,dc=org
-objectclass: posixAccount
-objectclass: inetOrgPerson
-cn: user02
-sn: user02
-ou: 1wiaw
-uid: user02
-uidNumber: 2001
-gidNumber: 201
-homeDirectory: /bin/bash
-
 dn: uid=user03,ou=usuaris,dc=edt,dc=org
 objectclass: posixAccount
 objectclass: inetOrgPerson
@@ -29,8 +7,8 @@ ou: 1wiaw
 uid: user03
 uidNumber: 2002
 gidNumber: 201
-homeDirectory: /bin/bash
-
+homeDirectory: /tmp/user03
+ 
 dn: uid=user04,ou=usuaris,dc=edt,dc=org
 objectclass: posixAccount
 objectclass: inetOrgPerson
@@ -40,8 +18,8 @@ ou: 1wiaw
 uid: user04
 uidNumber: 2003
 gidNumber: 201
-homeDirectory: /bin/bash
-
+homeDirectory: /tmp/user04
+ 
 dn: uid=user05,ou=usuaris,dc=edt,dc=org
 objectclass: posixAccount
 objectclass: inetOrgPerson
@@ -51,5 +29,4 @@ ou: 1wiaw
 uid: user05
 uidNumber: 2004
 gidNumber: 201
-homeDirectory: /bin/bash
-
+homeDirectory: /tmp/user05

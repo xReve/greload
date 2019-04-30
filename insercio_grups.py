@@ -27,7 +27,7 @@ for linia in entrada:
 	'cn: %s\n' \
 	'gidNumber: %s\n' \
 	'description: Grup de %s\n' \
-	'objectclass: posixGroup\n \n' % (gname,gname,gid,gname)
+	'objectclass: posixGroup\n' % (gname,gname,gid,gname)
 	
 	# Comprovem si té usuaris que tenen el grup com a secundari
 	#if user_list != '';
