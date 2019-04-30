@@ -34,8 +34,14 @@ objectclass: posixGroup
 ```
 
 # Afegir 
-ldapadd -x -W -D "cn=Manager,dc=edt,dc=org" -f new.ldif
+ldapadd -x -w secret -D "cn=Manager,dc=edt,dc=org" -f new.ldif
 
+# Modificar grups
+ldapmodify -x -w secret -D "cn=Manager,dc=edt,dc=org" -f modify.ldif
+
+# Borrar entrades
+
+ldapdelete -w secret -D 'cn=Manager,dc=edt,dc=org' -f delete.ldif
 
 #### Execució
 

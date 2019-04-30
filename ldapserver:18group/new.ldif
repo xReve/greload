@@ -1,0 +1,15 @@
+dn: uid=new,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: Jordi Msas
+sn: Mas
+homephone: 555-222-2224
+mail: jordi@edt.org
+description: Watch out for this girl
+ou: profes
+uid: new
+uidNumber: 5070
+gidNumber: 100
+homeDirectory: /tmp/home/jordi
+userPassword: {SSHA}T5jrMgpJwZZgu0azkLIVoYhiG08/KGUv
+
