@@ -72,7 +72,7 @@ entrada.close()
 sortida.close()
 
 print 'Total processats:'
-print 'Acceptats: %s (Consultar alta_usuaris.ldif)' % accept
+print 'Acceptats: %s (Consultar usuaris_alta.ldif)' % accept
 print 'Denegats: %s (Consultar error.log)' % denied
 
 
