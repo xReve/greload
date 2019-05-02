@@ -7,11 +7,12 @@ import sys
 # Declarem
 fileIn = sys.argv[1] # Grups
 fileOut = 'grups_alta.ldif' # Fitxer ldif sortida
+error_log = "grups_error.log" # Fitxer errors
 
 # Obrim fitxers
 entrada = open(fileIn,"rw")
 sortida = open(fileOut,"a")
-# err = open(error_log,"a")
+err = open(error_log,"a")
 
 # Llegim grup per grup
 for linia in entrada:
@@ -21,7 +22,7 @@ for linia in entrada:
 	gname = llista_camps[0]
 	gid = llista_camps[2]
 	user_list = llista_camps[3]
-	print llista_camps
+	
 	# Creem fitxer ldif
 	line1 = 'dn: cn=%s,ou=grups,dc=edt,dc=org \n' \
 	'cn: %s\n' \
@@ -34,7 +35,7 @@ for linia in entrada:
 	if user_list != '\n':
 		# En cas que si els afegim conjuntament amb el grup
 		users = user_list.split(',')
-		for user in user_list:
+		for user in users:
 			line1 += 'memberUid: %s\n' % (user)
 	else:
 		line1 += '\n'
@@ -43,9 +44,15 @@ for linia in entrada:
 	
 
 # Tancament	
-#err.close()
+err.close()
 entrada.close()
 sortida.close()
 
-	
+print 'Total processats:'
+print 'Acceptats: %s (Consultar grups_alta.ldif)' % accept
+print 'Denegats: %s (Consultar grups_error.log)' % denied
+
+sys.exit(0)
+
+
 	
