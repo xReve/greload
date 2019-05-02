@@ -76,7 +76,8 @@ for linia in entrada:
 		# Obtenció del grup
 		# Connexió LDAP
 		try:
-			search = "ldapsearch -x -LLL -b 'ou=grups,dc=edt,dc=org' -h 172.18.0.2 gidNumber=%s dn | cut -f1 -d ',' | cut -f2 -d ' ' | cut -f2 -d '=' " % (gid)
+			search = "ldapsearch -x -LLL -b 'ou=grups,dc=edt,dc=org' -h ldap " \
+			"gidNumber=%s dn | cut -f1 -d ',' | cut -f2 -d ' ' | cut -f2 -d '=' " % (gid)
 			pipeData = subprocess.Popen([search],stdout=subprocess.PIPE,shell=True)
 			count = 1
 			grup = ''
@@ -112,7 +113,7 @@ for linia in entrada:
 		# Connexió no establerta
 		except:
 			sys.stderr.write('Bad connexion with LDAP')
-			exit(1)
+			sys.exit(1)
 	# Linia incorrecta
 	except:
 		err.write('Linia dusuari incorrecta, revisi la linia %s \n' % (lectura))
@@ -127,7 +128,7 @@ print 'Total processats:'
 print 'Acceptats: %s (Consultar usuaris_alta.ldif)' % accept
 print 'Denegats: %s (Consultar usuaris_error.log)' % denied
 
-exit(0)
+sys.exit(0)
 
 
 
