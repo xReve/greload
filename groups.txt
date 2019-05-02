@@ -1,4 +1,4 @@
-beef-xss:x:142:
+beef-xss:x:142:new,skeret
 docker:x:998:
 pere:x:1000:
 kvm:x:143:

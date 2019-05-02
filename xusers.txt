@@ -1,5 +1,5 @@
-user01:x:2000:201:/home/user01:/bin/bash
-user02:x:2001:201:/home/user02:/bin/bash
-user03:x:2002:201:/home/user03:/bin/bash
-user04:x:2003:201:/home/user04:/bin/bash
-user05:x:2004:201:/home/user05:/bin/bash
+user01:x:2000:201::/home/user01:/bin/bash
+user02:x:2001:202::/home/user02:/bin/bash
+user03:x:2002:203::/home/user03:/bin/bash
+user04:x:2003:204::/home/user04:/bin/bash
+user05:x:2004:200::/home/user05:/bin/bash

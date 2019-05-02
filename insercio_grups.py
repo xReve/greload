@@ -21,7 +21,7 @@ for linia in entrada:
 	gname = llista_camps[0]
 	gid = llista_camps[2]
 	user_list = llista_camps[3]
-	
+	print llista_camps
 	# Creem fitxer ldif
 	line1 = 'dn: cn=%s,ou=grups,dc=edt,dc=org \n' \
 	'cn: %s\n' \
@@ -30,11 +30,14 @@ for linia in entrada:
 	'objectclass: posixGroup\n' % (gname,gname,gid,gname)
 	
 	# Comprovem si té usuaris que tenen el grup com a secundari
-	#if user_list != '';
-		# En cas que si els afegim conjuntament amb el grup
-	#	for user in user_list:
-	#		line1 += '
 	
+	if user_list != '\n':
+		# En cas que si els afegim conjuntament amb el grup
+		users = user_list.split(',')
+		for user in user_list:
+			line1 += 'memberUid: %s\n' % (user)
+	else:
+		line1 += '\n'
 	# Guardem fitxer ldif
 	sortida.write(line1)
 	

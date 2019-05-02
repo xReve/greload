@@ -31,38 +31,55 @@ for linia in entrada:
 		login = llista_camps[0]
 		uid = llista_camps[2]
 		gid = llista_camps[3]
+		gecos = llista_camps[4]
 		home = llista_camps[5]
+		shell = llista_camps[6]
 		# Obtenció del grup
-		search = "ldapsearch -x -LLL -b 'ou=grups,dc=edt,dc=org' -h 172.22.0.2 gidNumber=%s dn | cut -f1 -d ',' | cut -f2 -d ' ' | cut -f2 -d '=' " % (gid)
-		pipeData = subprocess.Popen([search],stdout=subprocess.PIPE,shell=True)
-		count = 1
-		grup = ''
-		# Llegir el grup
-		for line in pipeData.stdout:
-			if count == 1:
-				grup = line 
-				count += 1
-	
-		# Si l'usuari no té un grup a la BBDD no es pot afegir
-		if grup == '':
-			err.write('User %s no te un grup existent a la BBDD. Crei el grup i despres afegeix lusuari \n ' % login)
-			denied += 1
-		else:
-		# Edició fitxer ldif per cada usuari
-			line1 = 'dn: uid=%s,ou=usuaris,dc=edt,dc=org\n' \
-			'objectclass: posixAccount\n' \
-			'objectclass: inetOrgPerson\n' \
-                        'cn: %s\n' \
-                        'sn: %s\n' \
-                        'ou: %s' \
-			'uid: %s\n' \
-			'uidNumber: %s\n' \
-			'gidNumber: %s\n' \
-			'homeDirectory: %s\n' % (login,login,login,grup,login,uid,gid,home)
+		# Connexió LDAP
+		try:
+			search = "ldapsearch -x -LLL -b 'ou=grups,dc=edt,dc=org' -h 172.24.0.2 gidNumber=%s dn | cut -f1 -d ',' | cut -f2 -d ' ' | cut -f2 -d '=' " % (gid)
+			pipeData = subprocess.Popen([search],stdout=subprocess.PIPE,shell=True)
+			count = 1
+			grup = ''
+			# Llegir el grup
+			for line in pipeData.stdout:
+				if count == 1:
+					grup = line 
+					count += 1
 			
-			# Guardem al fitxer ldif
-			sortida.write(line1)
-			accept += 1
+			# Si l'usuari no té un grup a la BBDD no es pot afegir
+			if grup == '':
+				err.write('User %s no te un grup existent a la BBDD. Crei el grup i despres afegeix lusuari \n ' % login)
+				denied += 1
+			else:
+				# Comprovem que pertany al grup d'alumnes 
+				# Creem el tag del grup de l'usuari (iam,isx,iaw)
+				if 'iam' in grup or 'isx' in grup or 'iaw' in grup:	
+					grup_tag = grup[1:-2]
+					new_login = grup_tag + login 
+				else:
+					new_login = login
+				# Edició fitxer ldif per cada usuari
+				line1 = 'dn: uid=%s,ou=usuaris,dc=edt,dc=org\n' \
+				'objectclass: posixAccount\n' \
+				'objectclass: inetOrgPerson\n' \
+				'cn: %s\n' \
+				'sn: %s\n' \
+				'ou: %s' \
+				'uid: %s\n' \
+				'uidNumber: %s\n' \
+				'gidNumber: %s\n' \
+				'loginShell: %s' \
+				'homeDirectory: %s\n\n' % (new_login,new_login,new_login,grup,new_login,uid,gid,shell,home)
+				
+				# Guardem al fitxer ldif
+				sortida.write(line1)
+				accept += 1
+		# Connexió no establerta
+		except:
+			sys.stderr.write('Bad connexion with LDAP')
+			sys.exit(1)
+	# Linia incorrecta
 	except:
 		err.write('Linia dusuari incorrecta, revisi la linia %s \n' % (lectura))
 		denied += 1
@@ -75,7 +92,7 @@ print 'Total processats:'
 print 'Acceptats: %s (Consultar usuaris_alta.ldif)' % accept
 print 'Denegats: %s (Consultar error.log)' % denied
 
-
+sys.exit(0)
 
 
 
