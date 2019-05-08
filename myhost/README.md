@@ -1,27 +1,42 @@
-# Kerberos khost
-## @edt ASIX M11-SAD Curs 2018-2019
+# DOCKER CLIENT
 
-**eescriba/k18:khostpl** host amb PAM de  kerberos. El servidor al que contacta s'ha
-  de dir *kserver.edt.org*. Aquest host configura el *system-auth* de pam per usar el
-  mòdul *pam_krb5.so*.
-  
-per generar autenticació PAM kerberos simplement cal:
+Docker en el qual els usuaris locals i LDAP podran fer connexions i els seus homes seran montats del servidor Samba
 
- * instal·lar pam_krb5
- * configurar /etc/pam.d/system-auth per fer ús del mòdul pam_krb5.so
-
-Execució:
-```
-docker run --rm --name kserver.edt.org -h kserver.edt.org --net mynet -d edtasixm11/k18:kserver
-docker run --rm --name khost.edt.org -h khost.edt.org --net mynet -it edtasixm11/k18:khostp
-```
+## EXECUCIÓ
 
 ```
-$ su - local01
+docker run --rm --privileged --name host -h host --network sambanet -it eescriba/sambahost:18homes
 
-[local01@host ~]$ su - user03
-Password:  kuser03
+```
 
-[user03@host ~]$ id
-uid=1005(user03) gid=100(users) groups=100(users),1001(kusers)
+MOUNT TYPE **CIFS**
+
+```
+<volume user="*" fstype="cifs" server="samba" path="%(USER)" mountpoint="~/%(USER)" />
+
+```
+
+## EXEMPLE
+
+```
+
+[root@host docker]# su - pere
+Creating directory '/tmp/home/pere'.
+reenter password for pam_mount:
+[pere@host ~]$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+overlay         370G   52G  300G  15% /
+tmpfs            64M     0   64M   0% /dev
+tmpfs           3.9G     0  3.9G   0% /sys/fs/cgroup
+/dev/sda5       370G   52G  300G  15% /etc/hosts
+shm              64M     0   64M   0% /dev/shm
+//samba/pere    370G   71G  300G  19% /tmp/home/pere/pere
+
+[pere@host ~]$ ll
+total 0
+drwxr-xr-x 2 pere users 0 Feb 21 15:42 pere
+
+[pere@host ~]$ cat pere/README.md 
+ Benvingut a casa 
+
 ```
