@@ -12,8 +12,4 @@ kadmin.local -q "addprinc -pw pau pau"
 kadmin.local -q "addprinc -pw marta marta"
 kadmin.local -q "addprinc -pw admin admin"
 
-# Usuaris kerberos
-kadmin.local -q "addprinc -pw ker01 ker01"
-kadmin.local -q "addprinc -pw ker02 ker02"
-kadmin.local -q "addprinc -pw ker03 ker03"
 

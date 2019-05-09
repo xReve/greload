@@ -1,46 +1,37 @@
-# SERVER SAMBA
+# SERVIDOR SAMBA
 
-Servidor que exporta els homes dels usuaris LDAP i locals.
+## @edt ASIX M14-PROJECTE Curs 2018-2019
 
-## DEMO
+Servidor que permet el montatge d els homes dels usuaris LDAP a travès del volum que se li monta al engegarse del docker **homes**.
 
-**SHOW** `install.sh`
+**COMPROVACIÓ MOUNT VOLUM**
+
+* El docker **homes** exporta el volum **/home** que es monta automaticament al engegar el servidor **samba** utilitzant la opció 
+**--volumes-from homes.edt.org** , li indiques que vols montar tots els volums que té un docker en concret. 
 
 ```
+[root@samba docker]# mount -t ext4
+/dev/sda1 on /home type ext4 (rw,relatime,errors=remount-ro)
+```
 
-mkdir /tmp/home
-mkdir /tmp/home/pere
-mkdir /tmp/home/pau
-mkdir /tmp/home/anna
-mkdir /tmp/home/marta
-mkdir /tmp/home/jordi
-mkdir /tmp/home/admin
-
-cp README.md /tmp/home/pere
-cp README.md /tmp/home/pau
-cp README.md /tmp/home/anna
-cp README.md /tmp/home/marta
-cp README.md /tmp/home/jordi
-cp README.md /tmp/home/admin
-
-
-
-chown -R pere.users /tmp/home/pere
-chown -R pau.users /tmp/home/pau
-chown -R anna.alumnes /tmp/home/anna
-chown -R marta.alumnes /tmp/home/marta
-chown -R jordi.users /tmp/home/jordi
-chown -R admin.wheel /tmp/home/admin
-
-
+```
+[root@samba docker]# ll /home/grups/
+total 32
+drwxr-xr-x 3 root root 4096 May  9 16:17 admin
+drwxr-xr-x 6 root root 4096 May  9 16:17 especial
+drwxr-xr-x 2 root root 4096 May  9 16:17 hisx1
+drwxr-xr-x 2 root root 4096 May  9 16:17 hisx2
+drwxr-xr-x 2 root root 4096 May  9 16:17 wiam1
+drwxr-xr-x 2 root root 4096 May  9 16:17 wiam2
+drwxr-xr-x 2 root root 4096 May  9 16:17 wiaw1
+drwxr-xr-x 2 root root 4096 May  9 16:17 wiaw2
 ```
 
 
-
-## EXECUCIÓ
+* **EXECUCIÓ**
 
 ```
-docker run --rm --name samba -h samba --network sambanet -it eescriba/samba:18homes
+docker run --rm --name samba.edt.org -h samba.edt.org --network gandhi-net --privileged --volumes-from homes.edt.org -d eescriba/samba:greload
 
 ```
 
