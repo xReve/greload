@@ -1,0 +1,490 @@
+# Llistat total de la organitzacio dc=edt,dc=org
+# @edt 2016
+# M06-ASO
+# -----------------------------------------------
+
+# ----------------- Estructura principal-----------------
+dn: dc=edt,dc=org
+dc: edt
+description: Escola del treball de Barcelona
+objectClass: dcObject
+objectClass: organization
+o: edt.org
+
+dn: ou=usuaris,dc=edt,dc=org
+ou: usuaris
+description: Container per usuaris del sistema linux
+objectclass: organizationalunit
+
+dn: ou=hosts,dc=edt,dc=org
+ou: hosts
+description: Container per a hosts linux
+objectclass: organizationalunit
+
+dn: ou=aules,dc=edt,dc=org
+ou: aules
+description: Container per aules de la organitzacio
+objectclass: organizationalunit
+
+# ----------------Hosts----------------------------
+# - Hosts i
+dn: uid=i01,ou=hosts,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: device
+objectclass: ipHost
+cn: i01
+uid: i01
+uidNumber: 5001
+gidNumber: 9000
+homeDirectory: /dev/null
+loginShell: /bin/false
+gecos: Computer
+description: Ordinador i01
+ipHostNumber: 0.0.0.0
+
+
+dn: uid=i02,ou=hosts,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: device
+objectclass: ipHost
+cn: i02
+uid: i02
+uidNumber: 5002
+gidNumber: 9000
+homeDirectory: /dev/null
+loginShell: /bin/false
+gecos: Computer
+description: Ordinador i02
+ipHostNumber: 0.0.0.0
+
+dn: uid=i03,ou=hosts,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: device
+objectclass: ipHost
+cn: i03
+uid: i03
+uidNumber: 5003
+gidNumber: 9000
+homeDirectory: /dev/null
+loginShell: /bin/false
+gecos: Computer
+description: Ordinador i03
+ipHostNumber: 0.0.0.0
+
+dn: uid=i04,ou=hosts,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: device
+objectclass: ipHost
+cn: i04
+uid: i04
+uidNumber: 5004
+gidNumber: 9000
+homeDirectory: /dev/null
+loginShell: /bin/false
+gecos: Computer
+description: Ordinador i04
+ipHostNumber: 0.0.0.0
+
+dn: uid=i05,ou=hosts,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: device
+objectclass: ipHost
+cn: i05
+uid: i05
+uidNumber: 5005
+gidNumber: 9000
+homeDirectory: /dev/null
+loginShell: /bin/false
+gecos: Computer
+description: Ordinador i05
+ipHostNumber: 0.0.0.0
+
+dn: uid=i06,ou=hosts,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: device
+objectclass: ipHost
+cn: i06
+uid: i06
+uidNumber: 5006
+gidNumber: 9000
+homeDirectory: /dev/null
+loginShell: /bin/false
+gecos: Computer
+description: Ordinador i06
+ipHostNumber: 0.0.0.0
+
+dn: uid=i07,ou=hosts,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: device
+objectclass: ipHost
+cn: i07
+uid: i07
+uidNumber: 5007
+gidNumber: 9000
+homeDirectory: /dev/null
+loginShell: /bin/false
+gecos: Computer
+description: Ordinador i07
+ipHostNumber: 0.0.0.0
+
+dn: uid=i08,ou=hosts,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: device
+objectclass: ipHost
+cn: i08
+uid: i08
+uidNumber: 5008
+gidNumber: 9000
+homeDirectory: /dev/null
+loginShell: /bin/false
+gecos: Computer
+description: Ordinador i08
+ipHostNumber: 0.0.0.0
+
+dn: uid=i09,ou=hosts,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: device
+objectclass: ipHost
+cn: i09
+uid: i09
+uidNumber: 5009
+gidNumber: 9000
+homeDirectory: /dev/null
+loginShell: /bin/false
+gecos: Computer
+description: Ordinador i09
+ipHostNumber: 0.0.0.0
+
+dn: uid=i10,ou=hosts,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: device
+objectclass: ipHost
+cn: i10
+uid: i10
+uidNumber: 5010
+gidNumber: 9000
+homeDirectory: /dev/null
+loginShell: /bin/false
+gecos: Computer
+description: Ordinador i10
+ipHostNumber: 0.0.0.0
+
+# - Hosts j
+
+dn: uid=j01,ou=hosts,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: device
+objectclass: ipHost
+cn: j01
+uid: j01
+uidNumber: 5011
+gidNumber: 9000
+homeDirectory: /dev/null
+loginShell: /bin/false
+gecos: Computer
+description: Ordinador j01
+ipHostNumber: 0.0.0.0
+
+dn: uid=j02,ou=hosts,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: device
+objectclass: ipHost
+cn: j02
+uid: j02
+uidNumber: 5012
+gidNumber: 9000
+homeDirectory: /dev/null
+loginShell: /bin/false
+gecos: Computer
+description: Ordinador j02
+ipHostNumber: 0.0.0.0
+
+dn: uid=j03,ou=hosts,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: device
+objectclass: ipHost
+cn: j03
+uid: j03
+uidNumber: 5013
+gidNumber: 9000
+homeDirectory: /dev/null
+loginShell: /bin/false
+gecos: Computer
+description: Ordinador j03
+ipHostNumber: 0.0.0.0
+
+dn: uid=j04,ou=hosts,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: device
+objectclass: ipHost
+cn: j04
+uid: j04
+uidNumber: 5014
+gidNumber: 9000
+homeDirectory: /dev/null
+loginShell: /bin/false
+gecos: Computer
+description: Ordinador j04
+ipHostNumber: 0.0.0.0
+
+dn: uid=j05,ou=hosts,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: device
+objectclass: ipHost
+cn: j05
+uid: j05
+uidNumber: 5015
+gidNumber: 9000
+homeDirectory: /dev/null
+loginShell: /bin/false
+gecos: Computer
+description: Ordinador j05
+ipHostNumber: 0.0.0.0
+
+dn: uid=j06,ou=hosts,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: device
+objectclass: ipHost
+cn: j06
+uid: j06
+uidNumber: 5016
+gidNumber: 9000
+homeDirectory: /dev/null
+loginShell: /bin/false
+gecos: Computer
+description: Ordinador j06
+ipHostNumber: 0.0.0.0
+
+dn: uid=j07,ou=hosts,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: device
+objectclass: ipHost
+cn: j07
+uid: j07
+uidNumber: 5017
+gidNumber: 9000
+homeDirectory: /dev/null
+loginShell: /bin/false
+gecos: Computer
+description: Ordinador j07
+ipHostNumber: 0.0.0.0
+
+dn: uid=j08,ou=hosts,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: device
+objectclass: ipHost
+cn: j08
+uid: j08
+uidNumber: 5018
+gidNumber: 9000
+homeDirectory: /dev/null
+loginShell: /bin/false
+gecos: Computer
+description: Ordinador j08
+ipHostNumber: 0.0.0.0
+
+dn: uid=j09,ou=hosts,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: device
+objectclass: ipHost
+cn: j09
+uid: j09
+uidNumber: 5019
+gidNumber: 9000
+homeDirectory: /dev/null
+loginShell: /bin/false
+gecos: Computer
+description: Ordinador j09
+ipHostNumber: 0.0.0.0
+
+dn: uid=j10,ou=hosts,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: device
+objectclass: ipHost
+cn: j10
+uid: j10
+uidNumber: 5020
+gidNumber: 9000
+homeDirectory: /dev/null
+loginShell: /bin/false
+gecos: Computer
+description: Ordinador j10
+ipHostNumber: 0.0.0.0
+
+
+# ---------- Usuaris ----------------------------
+
+dn: uid=pau,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: Pau Pou
+sn: Pou
+homephone: 555-222-2220
+mail: pau@edt.org
+description: Watch out for this guy
+ou: profes
+uid: pau
+uidNumber: 1001
+gidNumber: 200
+homeDirectory: /home/grups/especial/pau
+userPassword: {SSHA}NDkipesNQqTFDgGJfyraLz/csZAIlk2/
+
+dn: uid=pere,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: Pere Pou
+sn: Pou
+homephone: 555-222-2221
+mail: pere@edt.org
+description: Watch out for this guy
+ou: alumnes
+uid: pere
+uidNumber: 1002
+gidNumber: 200
+homeDirectory: /home/grups/especial/pere
+userPassword: {SSHA}ghmtRL11YtXoUhIP7z6f7nb8RCNadFe+
+
+dn: uid=anna,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: Anna Pou
+sn: Pou
+homephone: 555-222-2222
+mail: anna@edt.org
+description: Watch out for this girl
+ou: alumnes
+uid: anna
+uidNumber: 1003
+gidNumber: 200
+homeDirectory: /home/grups/especial/anna
+userPassword: {SSHA}Bm4B3Bu/fuH6Bby9lgxfFAwLYrK0RbOq
+
+dn: uid=marta,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: Marta Mas
+sn: Mas
+homephone: 555-222-2223
+mail: marta@edt.org
+description: Watch out for this girl
+ou: alumnes
+uid: marta
+uidNumber: 1004
+gidNumber: 200
+homeDirectory: /home/grups/especial/marta
+userPassword: {SSHA}9+1F2f5vcW8z/tmSzYNWdlz5GbDCyoOw
+
+dn: uid=admin,ou=usuaris,dc=edt,dc=org
+objectclass: posixAccount
+objectclass: inetOrgPerson
+cn: Administrador Sistema
+sn: System
+homephone: 555-222-2225
+mail: admin@edt.org
+description: Administrador
+ou: admin
+uid: admin
+uidNumber: 10
+gidNumber: 10
+homeDirectory: /home/grups/admin/admin
+userPassword: {SSHA}4mS0FycWc5bkpW8/a396SGNDTQUlFSX3
+
+
+# ---------- Grups ------------------------------
+
+dn: ou=grups,dc=edt,dc=org
+ou: groups
+description: Container per a grups
+objectclass: organizationalunit
+
+dn: cn=admin,ou=grups,dc=edt,dc=org
+cn: admin
+gidNumber: 10
+description: Grup de administracio system
+memberUid: admin
+objectclass: posixGroup
+
+dn: cn=hosts,ou=grups,dc=edt,dc=org
+cn: hosts
+gidNumber: 9000
+description: Grup de hosts de l'organitzacio
+objectclass: posixGroup
+memberUid: i01
+memberUid: i02
+memberUid: i03
+memberUid: i04
+memberUid: i05
+memberUid: i06
+memberUid: i07
+memberUid: i08
+memberUid: i09
+memberUid: i10
+memberUid: j01
+memberUid: j02
+memberUid: j03
+memberUid: j04
+memberUid: j05
+memberUid: j06
+memberUid: j07
+memberUid: j08
+memberUid: j09
+memberUid: j10
+
+dn: cn=alumnes,ou=grups,dc=edt,dc=org
+cn: alumnes
+gidNumber: 101
+description: Grup de alumnes
+objectclass: posixGroup
+
+dn: cn=profes,ou=grups,dc=edt,dc=org
+cn: profes
+gidNumber: 100
+description: Grup de profes
+objectclass: posixGroup
+
+dn: cn=especial,ou=grups,dc=edt,dc=org
+cn: especial
+gidNumber: 200
+description: Grup d'usuaris especials
+memberUid: pere
+memberUid: anna
+memberUid: marta
+memberUid: pau
+objectclass: posixGroup
+
+dn: cn=wiaw1,ou=grups,dc=edt,dc=org
+cn: wiaw1
+gidNumber: 201
+description: Grup de 1wiaw
+objectclass: posixGroup
+
+dn: cn=wiaw2,ou=grups,dc=edt,dc=org
+cn: wiaw2
+gidNumber: 202
+description: Grup de 2wiaw
+objectclass: posixGroup
+
+dn: cn=hisx1,ou=grups,dc=edt,dc=org
+cn: hisx1
+gidNumber: 203
+description: Grup de 1asix
+objectclass: posixGroup
+
+dn: cn=hisx2,ou=grups,dc=edt,dc=org
+cn: hisx2
+gidNumber: 204
+description: Grup de 2asix
+objectclass: posixGroup
+
+dn: cn=wiam1,ou=grups,dc=edt,dc=org
+cn: wiam1
+gidNumber: 205
+description: Grup de wiam1
+objectclass: posixGroup
+
+dn: cn=wiam2,ou=grups,dc=edt,dc=org
+cn: wiam2
+gidNumber: 206
+description: Grup de wiam2
+objectclass: posixGroup
+
