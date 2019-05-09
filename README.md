@@ -27,4 +27,4 @@ docker run --rm --name samba.edt.org -h samba.edt.org --network gandhi-net --pri
 docker run --rm --name shost.edt.org -h shost.edt.org --network gandhi-net --privileged -it eescriba/sambahost:greload
 
 
-
+https://tools.ietf.org/html/rfc2798#ref-LDIF
