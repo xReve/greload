@@ -7,7 +7,6 @@
 /usr/sbin/smbd && echo "smb Ok"
 /usr/sbin/nmbd && echo "nmb  Ok"
 
-/bin/bash
 
 #/bin/bash
 while [ 1 ]
