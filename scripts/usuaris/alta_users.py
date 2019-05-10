@@ -70,13 +70,11 @@ for linia in entrada:
 		login = llista_camps[0]
 		uid = llista_camps[2]
 		gid = llista_camps[3]
-		gecos = llista_camps[4]
-		home = llista_camps[5]
 		shell = llista_camps[6]
 		# Obtenció del grup
 		# Connexió LDAP
 		try:
-			search = "ldapsearch -x -LLL -b 'ou=grups,dc=edt,dc=org' -h ldap " \
+			search = "ldapsearch -x -LLL -b 'ou=grups,dc=edt,dc=org' -h ldap.edt.org " \
 			"gidNumber=%s dn | cut -f1 -d ',' | cut -f2 -d ' ' | cut -f2 -d '=' " % (gid)
 			pipeData = subprocess.Popen([search],stdout=subprocess.PIPE,shell=True)
 			count = 1
@@ -99,6 +97,9 @@ for linia in entrada:
 					new_login = grup_tag + login 
 				else:
 					new_login = login
+				
+				# Editem el home directory en funcio del grup
+				home = '/home/grups/%s/%s' % (grup,new_login)
 					
 				# Edició fitxer ldif 
 				entrada_user = insert_ldif(new_login,grup,uid,gid,shell,home)

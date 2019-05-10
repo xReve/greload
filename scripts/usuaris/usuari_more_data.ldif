@@ -1,0 +1,14 @@
+dn: uid=anna,ou=usuaris,dc=edt,dc=org
+changetype: modify
+add: mail
+mail: asd
+-
+add: mobile
+mobile: 727
+-
+add: description
+description: im anna
+-
+add: displayName
+displayName: anna pra
+
