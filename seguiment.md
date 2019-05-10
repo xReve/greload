@@ -34,6 +34,10 @@ al docker homes **homes** .
 Aquest docker té creat un volum el qual incorpora tots els homes dels usuaris de tal forma que ens permetrà exportar-los en un altre docker,en aquest cas el de samba. 
 El servidor samba, al ser iniciat, monta aquest volum del **homes** a dins seu perquè els pugi agafar i d'aquesta manera montar el home al usuari en iniciar la sessió.
 
+He treballat una mica més en els scripts creant el **formulari** per d'informació adicional per a l'usuari.
+
+He començat a preparar tant el **servidor com el client nfs**. No estàn en funcionament encara.
+
 
 * **SETMANA 4**
  

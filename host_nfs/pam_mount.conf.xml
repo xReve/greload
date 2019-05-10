@@ -14,7 +14,8 @@
 
 		<!-- Volume definitions -->
 
-<volume user="*" fstype="cifs" server="samba.edt.org" path="%(USER)"  mountpoint="~/%(USER)" />
+<volume user="*" fstype="nfs" server="nfsserver.edt.org" path="/home/grups/%(GROUP)/%(USER)" mountpoint="~/%(USER)" uid="%(USER)" gid="%(GROUP)" />
+
 		<!-- pam_mount parameters: General tunables -->
 
 <!--
