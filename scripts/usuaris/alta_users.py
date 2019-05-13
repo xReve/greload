@@ -48,12 +48,15 @@ def modify_ldif(grup,user):
 fileIn = sys.argv[1] # Usuaris
 fileOut = 'usuaris_alta.ldif' # Fitxer ldif sortida
 fileOutmod = 'usuaris_append_grup.ldif' # Fitxer modificació grup
+fileUsers = 'ldapusers_list.txt' # Fitxer amb noms d'usuari 
 error_log = "usuaris_error.log" # Fitxer errors
 
 # Obrim fitxers
 entrada = open(fileIn,"r")
 sortida_user = open(fileOut,"a")
 sortida_grup = open(fileOutmod, "a")
+sortida_userlist = open(fileUsers, "a")
+
 err = open(error_log,"a")
 
 # Contadors
@@ -108,13 +111,14 @@ for linia in entrada:
 				entrada_user_grup = modify_ldif(grup,new_login)
 				
 				# Guardem dos fitxers ldif
+				sortida_userlist.write(new_login + ':' + grup + '\n')
 				sortida_user.write(entrada_user)
 				sortida_grup.write(entrada_user_grup)
 				accept += 1
 		# Connexió no establerta
 		except:
 			sys.stderr.write('Bad connexion with LDAP')
-			sys.exit(1)
+			exit(1)
 	# Linia incorrecta
 	except:
 		err.write('Linia dusuari incorrecta, revisi la linia %s \n' % (lectura))
@@ -129,7 +133,7 @@ print 'Total processats:'
 print 'Acceptats: %s (Consultar usuaris_alta.ldif)' % accept
 print 'Denegats: %s (Consultar usuaris_error.log)' % denied
 
-sys.exit(0)
+exit(0)
 
 
 

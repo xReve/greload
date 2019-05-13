@@ -10,6 +10,7 @@ cp /opt/docker/nsswitch.conf /etc/nsswitch.conf
 /usr/sbin/nslcd && echo "nslcd Ok"
 /usr/sbin/nscd && echo "nscd Ok"
 
+#--------------------------------
 
 mkdir /home/grups
 mkdir /home/grups/hisx1
@@ -37,13 +38,5 @@ chown -R pau.especial /home/grups/especial/pau
 chown -R anna.especial /home/grups/especial/anna
 chown -R marta.especial /home/grups/especial/marta
 chown -R admin.admin /home/grups/especial/admin
-
-# -----------------------------------------------------------
-
-cp /opt/docker/nslcd.conf /etc/nslcd.conf
-cp /opt/docker/ldap.conf /etc/openldap/ldap.conf
-cp /opt/docker/nsswitch.conf /etc/nsswitch.conf
-
-
 
 
