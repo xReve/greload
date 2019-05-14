@@ -2,8 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import sys 
-import subprocess 
-import os
+
 # Funcions
 
 def delete_user(user):

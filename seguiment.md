@@ -41,6 +41,14 @@ He començat a preparar tant el **servidor com el client nfs**. No estàn en fun
 
 * **SETMANA 4**
  
+El servidor **nfs** està en funcionament juntament amb el seu client, el qual pot inciar sessió i el servidor li monta el seu home via nfs.
+
+M'estic documentant sobre la implementació del servidor **dns i dhcp** en els dockers respectius i també estic avançant ens els scripts.
+
+
+
+
+
 
 
 

@@ -1,5 +1,5 @@
 # SCRIPTS GRUPS
-## INJECCIÓ GRUPS
+## INJECCIÓ i ESBORRAT DE GRUPS
 
 **insercio-grups.py** -> Script que reb grups amb el format `/etc/group` i els transforma amb format **ldif**.
 

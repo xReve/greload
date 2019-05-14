@@ -31,7 +31,7 @@ def group_ldif(gname,gid,user_list):
 # Declarem
 fileIn = sys.argv[1] # Grups
 fileOut = 'grups_alta.ldif' # Fitxer ldif sortida
-error_log = "grups_error.log" # Fitxer errors
+error_log = "errors/grups_error.log" # Fitxer errors
 
 # Obrim fitxers
 entrada = open(fileIn,"rw")
@@ -45,7 +45,7 @@ denied = 0
 
 # Llegim grup per grup
 for linia in entrada:
-	lectura+=1
+	lectura += 1
 	try:
 	# Separem camps
 		llista_camps = linia.split(':')
@@ -76,7 +76,7 @@ print 'Total processats:'
 print 'Acceptats: %s (Consultar grups_alta.ldif)' % accept
 print 'Denegats: %s (Consultar grups_error.log)' % denied
 
-sys.exit(0)
+exit(0)
 
 
 	

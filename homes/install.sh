@@ -10,6 +10,7 @@ cp /opt/docker/nsswitch.conf /etc/nsswitch.conf
 /usr/sbin/nslcd && echo "nslcd Ok"
 /usr/sbin/nscd && echo "nscd Ok"
 
+cp /opt/docker/krb5.conf /etc/krb5.conf
 #--------------------------------
 
 mkdir /home/grups

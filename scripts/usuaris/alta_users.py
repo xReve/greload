@@ -104,10 +104,10 @@ for linia in entrada:
 				# Editem el home directory en funcio del grup
 				home = '/home/grups/%s/%s' % (grup,new_login)
 					
-				# Edició fitxer ldif 
+				# Creació format ldif per l'usuari
 				entrada_user = insert_ldif(new_login,grup,uid,gid,shell,home)
 				
-				# Edició fitxer grup 
+				# Creació format ldif pel grup 
 				entrada_user_grup = modify_ldif(grup,new_login)
 				
 				# Guardem dos fitxers ldif
