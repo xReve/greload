@@ -4,5 +4,5 @@ En aquest apartat trobem els scripts relacionats amb la **injecció,modificació
 
 `grups` -> Directori que contè scripts de grups
 
-`usuaris'' -> Directori que contè scripts d'usuaris
+`usuaris` -> Directori que contè scripts d'usuaris
 

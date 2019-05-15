@@ -21,8 +21,8 @@ do
 done < $fileGrups
 
 echo "TOTAL:"
-echo "Successed: $esborrats"
-echo "Failed: $fails"
+echo "Succeed: $esborrats"
+echo "Fail: $fails"
 
 
 

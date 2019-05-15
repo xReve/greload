@@ -23,7 +23,7 @@ do
 done < $fileGrups
 
 echo "TOTAL:"
-echo "Successed: $creats"
-echo "Failed: $fails"
+echo "Succeed: $creats"
+echo "Fail: $fails"
 
 
