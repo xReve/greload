@@ -22,13 +22,9 @@ def delete_user_entry(user):
 	Entrada: String(usuari)
 	Sortida: String format ldif
 	'''
-	
-	line = 'dn: cn=%s,ou=grups,dc=edt,dc=org\n' \
-			'changetype: modify\n' \
-			'delete: memberUidn\n' \
-			'memberUid: %s\n' % (grup,user)
-	
-	return line
+
+# https://itsecureadmin.com/2010/02/removing-memberuid-from-openldap-group/
+
 
 
 # Declarem
@@ -46,6 +42,7 @@ sortida_grup = open(fileOut_2, "a")
 for user in entrada:
 	
 	# Fitxer ldif delete usuaris
+	#print user.strip()
 	
 	line = delete_user(user.strip())
 	

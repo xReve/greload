@@ -1,0 +1,5 @@
+iawuser01:/home/grups/wiaw1/iawuser01
+iawuser02:/home/grups/wiaw2/iawuser02
+isxuser03:/home/grups/hisx1/isxuser03
+isxuser04:/home/grups/hisx2/isxuser04
+user05:/home/grups/especial/user05
