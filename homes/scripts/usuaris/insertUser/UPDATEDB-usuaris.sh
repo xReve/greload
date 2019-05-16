@@ -35,7 +35,7 @@ ldapadd -x -w secret -h ldap.edt.org -D "cn=Manager,dc=edt,dc=org" -f usuaris_ap
 
 # Inserció kerberos
 
-bash create_kerberos.sh insert_users.txt
+bash create_kerberos.sh userhomes.txt
 
 # Creació home
 

@@ -112,7 +112,7 @@ for linia in entrada:
 				# Guardem dos fitxers ldif
 				sortida_user.write(entrada_user)
 				sortida_grup.write(entrada_user_grup)
-				sortida_homes.write(home + '\n')
+				sortida_homes.write(new_login + ':' + home + '\n')
 				accept += 1
 		# Connexió no establerta
 		except:
