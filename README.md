@@ -11,6 +11,7 @@
 
 * SEGUIMENT DEL PROJECTE EN EL FITXER **seguiment.md**
 
+Les imatges es troben disponibles a [eescriba](https://hub.docker.com/u/eescriba/)
 
 **EXECUCIÓ DOCKERS**
 
