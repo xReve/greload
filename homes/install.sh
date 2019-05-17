@@ -20,24 +20,24 @@ mkdir /home/grups/wiam1
 mkdir /home/grups/wiam2
 mkdir /home/grups/wiaw1
 mkdir /home/grups/wiaw2
-mkdir /home/grups/especial
+mkdir /home/grups/test
 mkdir /home/grups/admin
-mkdir /home/grups/especial/pere
-mkdir /home/grups/especial/pau
-mkdir /home/grups/especial/anna
-mkdir /home/grups/especial/marta
-mkdir /home/grups/admin/admin
+mkdir /home/grups/test/pere
+mkdir /home/grups/test/pau
+mkdir /home/grups/test/anna
+mkdir /home/grups/test/marta
+mkdir /home/grups/admin/operator
 
-cp welcome.md /home/grups/especial/pere
-cp welcome.md /home/grups/especial/pau
-cp welcome.md /home/grups/especial/anna
-cp welcome.md /home/grups/especial/marta
-cp welcome.md /home/grups/especial/admin
+cp welcome.md /home/grups/test/pere
+cp welcome.md /home/grups/test/pau
+cp welcome.md /home/grups/test/anna
+cp welcome.md /home/grups/test/marta
+cp welcome.md /home/grups/test/operator
 
-chown -R pere.especial /home/grups/especial/pere
-chown -R pau.especial /home/grups/especial/pau
-chown -R anna.especial /home/grups/especial/anna
-chown -R marta.especial /home/grups/especial/marta
-chown -R admin.admin /home/grups/especial/admin
+chown -R pere.test /home/grups/test/pere
+chown -R pau.test /home/grups/test/pau
+chown -R anna.test /home/grups/test/anna
+chown -R marta.test /home/grups/test/marta
+chown -R operator.admin /home/grups/admin/operator
 
 
