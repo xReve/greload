@@ -26,7 +26,7 @@ echo -e "pere\npere" | smbpasswd -a pere
 echo -e "pau\npau" | smbpasswd -a pau
 echo -e "anna\nanna" | smbpasswd -a anna
 echo -e "marta\nmarta" | smbpasswd -a marta
-echo -e "admin\nadmin" | smbpasswd -a admin
+echo -e "operator\noperator" | smbpasswd -a operator
 
 
 
