@@ -4,5 +4,10 @@
 # -------------------------------------
 /opt/docker/install.sh && echo "Ok install"
 
-/bin/bash
+#/bin/bash
+
+while [ 1 ]
+do
+  a=1
+done
 

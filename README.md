@@ -13,6 +13,11 @@
 
 Les imatges es troben disponibles a [eescriba](https://hub.docker.com/u/eescriba/)
 
+
+docker-compose up -d
+
+
+
 **EXECUCIÓ DOCKERS**
 
 docker run --rm --name ldap.edt.org -h ldap.edt.org --network gandhi-net -d eescriba/ldapserver:greload

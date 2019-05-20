@@ -14,7 +14,7 @@
 
 		<!-- Volume definitions -->
 
-<volume user="*" fstype="nfs" server="nfsserver.edt.org" path="/home/grups/%(GROUP)/%(USER)" mountpoint="~/%(USER)" uid="%(USER)" gid="%(GROUP)" />
+<volume user="*" fstype="nfs" server="nfs.edt.org" path="/home/grups/%(GROUP)/%(USER)" mountpoint="~/%(USER)" uid="%(USER)" gid="%(GROUP)" />
 
 		<!-- pam_mount parameters: General tunables -->
 

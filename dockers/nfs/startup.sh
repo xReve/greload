@@ -12,5 +12,11 @@
 /usr/sbin/rpc.nfsd && echo "rpc.nfsd Ok"
 /usr/sbin/rpc.mountd && echo "rpc.mountd Ok"
 /usr/sbin/exportfs -av
-/bin/bash
+
+while [ 1 ]
+do
+  a=1
+done
+
+#/bin/bash
 
