@@ -26,18 +26,18 @@ mkdir /home/grups/test/pere
 mkdir /home/grups/test/pau
 mkdir /home/grups/test/anna
 mkdir /home/grups/test/marta
-mkdir /home/grups/admin/operator
+mkdir /home/grups/admin/operador
 
 cp welcome.md /home/grups/test/pere
 cp welcome.md /home/grups/test/pau
 cp welcome.md /home/grups/test/anna
 cp welcome.md /home/grups/test/marta
-cp welcome.md /home/grups/test/operator
+cp welcome.md /home/grups/admin/operador
 
 chown -R pere.test /home/grups/test/pere
 chown -R pau.test /home/grups/test/pau
 chown -R anna.test /home/grups/test/anna
 chown -R marta.test /home/grups/test/marta
-chown -R operator.admin /home/grups/admin/operator
+chown -R operador.admin /home/grups/admin/operador
 
 

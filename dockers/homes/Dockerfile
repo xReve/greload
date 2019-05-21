@@ -1,5 +1,5 @@
 FROM fedora:27
-RUN dnf -y install procps passwd openldap-clients nss-pam-ldapd iputils nmap krb5-workstation python vim 
+RUN dnf -y install procps passwd openldap-clients nss-pam-ldapd iputils nmap krb5-workstation python vim openssh-clients 
 LABEL author="eescriba"
 LABEL description="User Homes"
 RUN mkdir /opt/docker

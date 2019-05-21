@@ -326,8 +326,9 @@ ou: test
 uid: pau
 uidNumber: 1001
 gidNumber: 200
+loginShell: /bin/bash
 homeDirectory: /home/grups/test/pau
-userPassword: {SSHA}NDkipesNQqTFDgGJfyraLz/csZAIlk2/
+userPassword: {SSHA}qiwn1xK8E4FmiATEJt5rS8VIexEkOCFV
 
 dn: uid=pere,ou=usuaris,dc=edt,dc=org
 objectclass: posixAccount
@@ -341,6 +342,7 @@ ou: test
 uid: pere
 uidNumber: 1002
 gidNumber: 200
+loginShell: /bin/bash
 homeDirectory: /home/grups/test/pere
 userPassword: {SSHA}ghmtRL11YtXoUhIP7z6f7nb8RCNadFe+
 
@@ -356,6 +358,7 @@ ou: test
 uid: anna
 uidNumber: 1003
 gidNumber: 200
+loginShell: /bin/bash
 homeDirectory: /home/grups/test/anna
 userPassword: {SSHA}Bm4B3Bu/fuH6Bby9lgxfFAwLYrK0RbOq
 
@@ -371,24 +374,25 @@ ou: test
 uid: marta
 uidNumber: 1004
 gidNumber: 200
+loginShell: /bin/bash
 homeDirectory: /home/grups/test/marta
 userPassword: {SSHA}9+1F2f5vcW8z/tmSzYNWdlz5GbDCyoOw
 
-dn: uid=operator,ou=usuaris,dc=edt,dc=org
+dn: uid=operador,ou=usuaris,dc=edt,dc=org
 objectclass: posixAccount
 objectclass: inetOrgPerson
 cn: Administrador Sistema
-sn: Operator
+sn: Operador
 homephone: 555-222-2225
-mail: operator@edt.org
+mail: operador@edt.org
 description: Administrador
 ou: admin
-uid: operator
-uidNumber: 10
-gidNumber: 10
-homeDirectory: /home/grups/admin/operator
-userPassword: {SSHA}4mS0FycWc5bkpW8/a396SGNDTQUlFSX3
-
+uid: operador
+uidNumber: 111
+gidNumber: 111
+loginShell: /bin/bash
+homeDirectory: /home/grups/admin/operador
+userPassword: {SSHA}ZAOzNpSapnb2gD4hmHit4XQh64Zlpja/
 
 # ---------- Grups ------------------------------
 
@@ -399,9 +403,9 @@ objectclass: organizationalunit
 
 dn: cn=admin,ou=grups,dc=edt,dc=org
 cn: admin
-gidNumber: 10
+gidNumber: 111
 description: Grup de administracio system
-memberUid: operator
+memberUid: operador
 objectclass: posixGroup
 
 dn: cn=hosts,ou=grups,dc=edt,dc=org

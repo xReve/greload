@@ -22,13 +22,13 @@ docker-compose up -d
 
 docker run --rm --name ldap.edt.org -h ldap.edt.org --network gandhi-net -d eescriba/ldapserver:greload
 
-docker run --rm --name kserver.edt.org -h kserver.edt.org --network gandhi-net -d eescriba/k18:greload
+docker run --rm --name kserver.edt.org -h kserver.edt.org --network gandhi-net -d eescriba/kerberos:greload
 
 
-docker run --rm --name homes.edt.org -h homes.edt.org --network gandhi-net --privileged -it eescriba/userhomes:greload
+docker run --rm --name homes.edt.org -h homes.edt.org --network gandhi-net --privileged -d eescriba/userhomes:greload
 
 
-docker run --rm --name samba.edt.org -h samba.edt.org --network gandhi-net --privileged --volumes-from homes.edt.org -d eescriba/samba:greload
+docker run --rm --name samba.edt.org -h samba.edt.org --network gandhi-net --privileged --volumes-from homes.edt.org -d eescriba/sambaserver:greload
 
 docker run --rm --name shost.edt.org -h shost.edt.org --network gandhi-net --privileged -it eescriba/sambahost:greload
 
@@ -36,5 +36,5 @@ docker run --rm --name shost.edt.org -h shost.edt.org --network gandhi-net --pri
 docker run --rm --name nfshost.edt.org -h nfshost.edt.org --network gandhi-net --privileged -it eescriba/nfshost:greload
 
 
-docker run --rm --name nfsserver.edt.org -h nfsserver.edt.org --network gandhi-net --privileged --volumes-from homes.edt.org -it eescriba/nfsserver:greload 
+docker run --rm --name nfsserver.edt.org -h nfsserver.edt.org --network gandhi-net --privileged --volumes-from homes.edt.org -d eescriba/nfsserver:greload 
 

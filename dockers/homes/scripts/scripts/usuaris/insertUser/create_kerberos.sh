@@ -9,8 +9,8 @@ fails=0
 while read -r line
 do
   user=$(echo "$line" | cut -f1 -d ':')
-  kadmin -p admin -w admin -q "addprinc -pw  $user $user" &> /dev/null
- 
+  kadmin -p operador -w operador -q "addprinc -pw  $user $user" &> /dev/null
+  kadmin -p operador -w operador "listprincs" | grep "$user" &> /dev/null 
   if [ $? -eq 0 ]
   then
       echo "$user creat correctament"
@@ -25,4 +25,3 @@ done < $fileUsers
 echo "TOTAL:"
 echo "Succeed: $creats"
 echo "Fail: $fails"
-

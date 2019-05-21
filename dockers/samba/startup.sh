@@ -5,9 +5,7 @@
 /opt/docker/install.sh && echo "Install Ok"
 
 /usr/sbin/smbd && echo "smb Ok"
-/usr/sbin/nmbd -F && echo "nmb  Ok"
+/usr/sbin/nmbd && echo "nmb  Ok"
 
-#while [ 1 ]
-#do
-#  a=1
-#done
+/usr/sbin/sshd -D
+

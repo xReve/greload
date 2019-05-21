@@ -5,7 +5,7 @@
 FROM fedora:27
 LABEL author="@edt ASIX M06-ASO"
 LABEL description="host PAM-SAMBA 2018-2019"
-RUN dnf -y install procps passwd openldap-clients nss-pam-ldapd pam_mount cifs-utils samba samba-client
+RUN dnf -y install procps passwd openldap-clients nss-pam-ldapd pam_mount cifs-utils samba samba-client openssh-server krb5-workstation
 RUN mkdir /opt/docker
 COPY * /opt/docker/
 RUN chmod +x /opt/docker/install.sh /opt/docker/startup.sh

@@ -9,6 +9,6 @@ kadmin.local -q "addprinc -pw pere pere"
 kadmin.local -q "addprinc -pw anna anna"
 kadmin.local -q "addprinc -pw pau pau"
 kadmin.local -q "addprinc -pw marta marta"
-kadmin.local -q "addprinc -pw operator operator"
+kadmin.local -q "addprinc -pw operador operador"
 
 

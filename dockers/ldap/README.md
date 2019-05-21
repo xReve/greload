@@ -41,6 +41,35 @@ objectClass: posixGroup
 
 ```
 
+```
+[root@ldap docker]# #pere
+[root@ldap docker]# slappasswd 
+New password: 
+Re-enter new password: 
+{SSHA}8Ze071A01HHddKpOnc34Eshh0uMi+R/L
+[root@ldap docker]# #marta
+[root@ldap docker]# slappasswd 
+New password: 
+Re-enter new password: 
+{SSHA}JpMKA0RV6Ktv7Dd56Nkg1ILelv84x7+9
+[root@ldap docker]# #pau
+[root@ldap docker]# slappasswd 
+New password: 
+Re-enter new password: 
+{SSHA}qiwn1xK8E4FmiATEJt5rS8VIexEkOCFV
+[root@ldap docker]# #anna
+[root@ldap docker]# slappasswd 
+New password: 
+Re-enter new password: 
+{SSHA}zMLvkz9WC9lbXtE1YJ8CYQliSKfujcDg
+[root@ldap docker]# #operador
+[root@ldap docker]# slappasswd 
+New password: 
+Re-enter new password: 
+{SSHA}ZAOzNpSapnb2gD4hmHit4XQh64Zlpja/
+[root@ldap docker]# 
+```
+
 # Afegir 
 ldapadd -x -w secret -D "cn=Manager,dc=edt,dc=org" -f new.ldif
 
@@ -50,6 +79,8 @@ ldapmodify -x -w secret -D "cn=Manager,dc=edt,dc=org" -f modify.ldif
 # Borrar entrades
 
 ldapdelete -w secret -D 'cn=Manager,dc=edt,dc=org' -f delete.ldif
+
+
 
 
 #### Execució

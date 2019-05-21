@@ -5,10 +5,11 @@ fileUsers=$1 # Fitxer amb els homes dels usuaris que s'han processat en el scrip
 creats=0
 fails=0
 
-while read -r home
+while read -r line
 do
-  user=$(echo "$home" | cut -f1 -d ':')
-  grup=$(echo "$home" | tr -s ':' '/' | cut -f4 -d '/')
+  user=$(echo "$line" | cut -f1 -d ':')
+  home=$(echo "$line" | cut -f2 -d ':')
+  grup=$(echo "$line" | tr -s ':' '/' | cut -f4 -d '/')
 
   mkdir "$home" &> /dev/null 
 
@@ -24,5 +25,3 @@ do
   fi
 
 done < $fileUsers
-
-

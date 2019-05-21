@@ -1,0 +1,300 @@
+dn: cn=wiaw1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iawuser01
+
+dn: cn=wiaw1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iawuser02
+
+dn: cn=wiaw1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iawuser03
+
+dn: cn=wiaw1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iawuser04
+
+dn: cn=wiaw1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iawuser05
+
+dn: cn=wiaw1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iawuser06
+
+dn: cn=wiaw1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iawuser07
+
+dn: cn=wiaw1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iawuser08
+
+dn: cn=wiaw1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iawuser09
+
+dn: cn=wiaw1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iawuser10
+
+dn: cn=wiaw2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iawuser11
+
+dn: cn=wiaw2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iawuser12
+
+dn: cn=wiaw2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iawuser13
+
+dn: cn=wiaw2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iawuser14
+
+dn: cn=wiaw2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iawuser15
+
+dn: cn=wiaw2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iawuser16
+
+dn: cn=wiaw2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iawuser17
+
+dn: cn=wiaw2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iawuser18
+
+dn: cn=wiaw2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iawuser19
+
+dn: cn=wiaw2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iawuser20
+
+dn: cn=hisx1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: isxuser21
+
+dn: cn=hisx1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: isxuser22
+
+dn: cn=hisx1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: isxuser23
+
+dn: cn=hisx1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: isxuser24
+
+dn: cn=hisx1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: isxuser25
+
+dn: cn=hisx1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: isxuser26
+
+dn: cn=hisx1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: isxuser27
+
+dn: cn=hisx1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: isxuser28
+
+dn: cn=hisx1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: isxuser29
+
+dn: cn=hisx1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: isxuser30
+
+dn: cn=hisx2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: isxuser31
+
+dn: cn=hisx2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: isxuser32
+
+dn: cn=hisx2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: isxuser33
+
+dn: cn=hisx2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: isxuser34
+
+dn: cn=hisx2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: isxuser35
+
+dn: cn=hisx2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: isxuser36
+
+dn: cn=hisx2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: isxuser37
+
+dn: cn=hisx2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: isxuser38
+
+dn: cn=hisx2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: isxuser39
+
+dn: cn=hisx2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: isxuser40
+
+dn: cn=wiam1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iamuser41
+
+dn: cn=wiam1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iamuser42
+
+dn: cn=wiam1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iamuser43
+
+dn: cn=wiam1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iamuser44
+
+dn: cn=wiam1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iamuser45
+
+dn: cn=wiam1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iamuser46
+
+dn: cn=wiam1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iamuser47
+
+dn: cn=wiam1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iamuser48
+
+dn: cn=wiam1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iamuser49
+
+dn: cn=wiam1,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iamuser50
+
+dn: cn=wiam2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iamuser51
+
+dn: cn=wiam2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iamuser52
+
+dn: cn=wiam2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iamuser53
+
+dn: cn=wiam2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iamuser54
+
+dn: cn=wiam2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iamuser55
+
+dn: cn=wiam2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iamuser56
+
+dn: cn=wiam2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iamuser57
+
+dn: cn=wiam2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iamuser58
+
+dn: cn=wiam2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iamuser59
+
+dn: cn=wiam2,ou=grups,dc=edt,dc=org
+changetype: modify
+add: memberUid
+memberUid: iamuser60
+
