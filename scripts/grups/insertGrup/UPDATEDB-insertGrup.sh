@@ -22,12 +22,24 @@ do
 	fi
 done
 
+echo ""
+echo "ATENCIO"
+echo "Ara s'afegiran els grups a la DB de LDAP"
+sleep 5 
+
 # Injecció grups
 
-ldapadd -x -w secret -h ldap.edt.org -D "cn=Manager,dc=edt,dc=org" -f grups_alta.ldif
+ldapadd -x -w operador -h ldap.edt.org -D "uid=operador,ou=usuaris,dc=edt,dc=org" -f grups_alta.ldif
 
+echo ""
+echo "Ara es crearan els directoris dels nous grups"
+sleep 5
 
 # Creació directori del grup
 
 bash create_homes.sh Grups_to_insert.txt
 
+
+echo ""
+echo "SCRIPT D'INJECCIO DE GRUPS FINALITZAT"
+exit 0

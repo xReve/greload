@@ -37,6 +37,17 @@ ldapadd -x -w operador -h ldap.edt.org -D "uid=operador,ou=usuaris,dc=edt,dc=org
 
 bash create_kerberos.sh userhomes.txt
 
+# Insercio samba
+
+python create_samba.py userhomes.txt
+
+chmod +x usuaris_samba.sh
+
+scp usuaris_samba.sh root@samba.edt.org:/tmp
+
+ssh root@samba.edt.org "bash /tmp/usuaris_samba.sh"
+
+
 # Creació home
 
 bash create_homes.sh userhomes.txt

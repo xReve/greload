@@ -16,10 +16,10 @@ def delete_user(user):
 	
 	return line
 
-def delete_user_entry(user):
+def delete_user_entry(user,grup):
 	'''
 	Funció que crea el format ldif per borrar un usuari d'un grup
-	Entrada: String(usuari)
+	Entrada: String(usuari), string(grup)
 	Sortida: String format ldif
 	'''
 	
@@ -45,12 +45,14 @@ sortida_grup = open(fileOut_2, "a")
 # Treballem
 for user in entrada:
 	
+	user = user.strip()
 	# Fitxer ldif delete usuaris
 	
-	line = delete_user(user.strip())
+	user_line = delete_user(user)
+	group_line = delete_user_entry(user,'GROUP')
 	
-	sortida_user.write(line)
-
+	sortida_user.write(user_line)
+	sortida_grup.write(group_line)
 
 	
 # Tancament	

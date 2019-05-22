@@ -18,11 +18,10 @@ def delete_grup(user):
 	return line
 
 
-
 # Declarem
 fileIn = sys.argv[1] # Grups
 fileOut = 'grup_delete.ldif' # Fitxer ldif amb grups a borrar
-error_log = 'errors/grupDelErr.txt' # Fitxer errors esborrat grups
+error_log = 'error_log/grupDelErr.txt' # Fitxer errors esborrat grups
 
 # Obrim fitxers
 entrada = open(fileIn,"rw")
@@ -37,16 +36,15 @@ denied = 0
 # Treballem
 for grup in entrada:
 	lectura += 1 
-	try:
 	# Comprovar si te usuaris 
-		grup = grup.strip()
-		search = "ldapsearch -h ldap.edt.org -x -LLL -b 'ou=grups,dc=edt,dc=org' 'cn=%s' | grep memberUid" % grup
-		pipeData = subprocess.Popen([search],stdout=subprocess.PIPE,shell=True)
-		usuari = ''
-		
-		for line in pipeData.stdout:
-			usuari = line
-		
+	grup = grup.strip()
+	try:
+		search = "ldapsearch -h ldap.edt.org -x -LLL -b 'ou=grups,dc=edt,dc=org' '(&(cn=%s)(memberUid=*))'" % (grup)
+		pipeData = subprocess.check_output([search],stderr=subprocess.STDOUT,shell=True)
+		p_output = pipeData.strip()
+		# La connexio ha funcionat, per tant s'ha obtingut un valor
+		usuari = p_output
+
 		# Si en te, no crear entrada ldif
 		if usuari != '':
 			err.write("El grup %s conte usuaris. Siusplau, esborri els usuaris del grup per poder esborra'l \n" % (grup) ) 
@@ -56,10 +54,11 @@ for grup in entrada:
 			linia = delete_grup(grup)
 			sortida_grup.write(linia)
 			accept +=1
-	except:
-		sys.stderr.write('Bad connexion with LDAP')
+	# S'ha produit un error en la connexio
+	except subprocess.CalledProcessError:
+		sys.stderr.write('Bad connexion with LDAP\n')
 		exit(1)
-
+		
 # Tancament	
 err.close()
 entrada.close()

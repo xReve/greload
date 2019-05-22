@@ -98,21 +98,29 @@ for linia in entrada:
 		shell = llista_camps[6]
 		# Obtenció del grup
 		# Connexió LDAP	
-		search = "ldapsearch -x -LLL -b 'ou=grups,dc=edt,dc=org' -h ldap.ed.org " \
-		"'gidNumber=%s' 'dn' | cut -f1 -d ',' | cut -f2 -d ' ' | cut -f2 -d '=' " % (gid)
+		search = "ldapsearch -x -LLL -b 'ou=grups,dc=edt,dc=org' -h ldap.edt.org " \
+		"gidNumber=%s dn | cut -f1 -d ',' | cut -f2 -d ' ' | cut -f2 -d '=' " % (gid)
 		
 		# Comprovació de la connexió
-		pipeData = subprocess.check_output([search],stderr=subprocess.STDOUT,shell=True)
-		p_output = pipeData.strip()
+		pipeErr = subprocess.check_output([search],stderr=subprocess.STDOUT,shell=True)
+		out_err = pipeErr.strip()
 		
 		# Si no hi ha connexió tanquem
-		if p_output == ERR:
+		if out_err == ERR:
 			sys.stderr.write('Bad connexion with LDAP\n')
 			exit(1)
-		# Si hi ha agafem el grup
-		else:
-			grup = p_output
-
+		
+		# Busquem el grup
+		pipeSearch = subprocess.Popen([search],stdout=subprocess.PIPE,shell=True)
+		count = 1
+		grup = ''
+		
+		# Llegim el grup
+		for line in pipeSearch.stdout:
+			if count == 1:
+				grup = line.strip()
+				count += 1
+		
 		# Si l'usuari no té un grup a la BBDD no es pot afegir
 		if grup == '':
 			err.write('User %s no te un grup existent a la BBDD. Crei el grup i despres afegeix lusuari \n ' % login)

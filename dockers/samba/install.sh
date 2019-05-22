@@ -27,6 +27,10 @@ cp /opt/docker/sshd_config /etc/ssh/sshd_config
 
 cp /opt/docker/krb5.conf /etc/krb5.conf
 
+# Passwd root
+
+echo "jupiter" | passwd --stdin root
+
 # users ldap 
 
 echo -e "pere\npere" | smbpasswd -a pere

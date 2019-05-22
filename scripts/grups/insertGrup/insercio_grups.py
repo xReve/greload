@@ -31,7 +31,7 @@ def group_ldif(gname,gid,user_list):
 # Declarem
 fileIn = sys.argv[1] # Grups
 fileOut = 'grups_alta.ldif' # Fitxer ldif sortida
-error_log = "errors/grups_error.log" # Fitxer errors
+error_log = "error_log/grups_error.log" # Fitxer errors
 
 # Obrim fitxers
 entrada = open(fileIn,"rw")
