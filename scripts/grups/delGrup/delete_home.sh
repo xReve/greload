@@ -17,7 +17,6 @@ do
       echo "$grup no s'ha pogut esborrar"
       fails=$((fails+1))
   fi
-  
 done < $fileGrups
 
 echo "TOTAL:"

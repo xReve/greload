@@ -5,9 +5,8 @@ fileGrups=$1
 creats=0
 fails=0
 
-while read -r line
+while read -r gname
 do
-  gname=$(echo "$line" | cut -f1 -d ':')
   mkdir /home/grups/"$gname" &> /dev/null
   
   if [ $? -eq 0 ]
@@ -18,8 +17,6 @@ do
       echo "$gname no s'ha pogut crear; Revisa el contingut"
       fails=$((fails+1))
   fi
-
-
 done < $fileGrups
 
 echo "TOTAL:"

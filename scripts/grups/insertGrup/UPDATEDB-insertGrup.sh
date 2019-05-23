@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # Creació LDIF
-python insercio_grups.py Grups_to_insert.txt
+python insercio_grups.py insert_groups.txt
 
 # Checkpoint
 echo "Vols continuar?"
@@ -37,7 +37,7 @@ sleep 5
 
 # Creació directori del grup
 
-bash create_homes.sh Grups_to_insert.txt
+bash create_homes.sh grups_acceptats.txt
 
 
 echo ""
