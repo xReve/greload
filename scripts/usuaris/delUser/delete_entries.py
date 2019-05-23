@@ -79,7 +79,7 @@ for user in entrada:
 			# Fitxer ldif delete usuaris
 			user_line = delete_user(user)
 			
-			# Grabem	
+			# Guardem
 			sortida_user.write(user_line)
 			sortida_grup.write(group_line)			
 			accept += 1

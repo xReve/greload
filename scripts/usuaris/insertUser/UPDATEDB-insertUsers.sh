@@ -22,8 +22,6 @@ do
         fi
 done
 
-# Informació addicional
-
 echo ""
 echo "ARA S'INJECTARAN ELS USUARIS A LA DB de LDAP"
 sleep 5

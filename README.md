@@ -16,7 +16,7 @@ Les imatges es troben disponibles a [eescriba](https://hub.docker.com/u/eescriba
 
 docker-compose up -d
 
-
+Al esborrar els homes dels grups vigilar si tenen subdirs dels users
 
 **EXECUCIÓ DOCKERS**
 

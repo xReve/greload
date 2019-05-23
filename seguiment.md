@@ -45,9 +45,20 @@ El servidor **nfs** està en funcionament juntament amb el seu client, el qual p
 
 M'estic documentant sobre la implementació del servidor **dns i dhcp** en els dockers respectius i també estic avançant ens els scripts.
 
+Finalment he creat la estructura desitjada del projecte. Els dockers aïllats en una xarxa docker i els clients en una altra xarxa sense saber dels servidors. Ell simplement ataca contra el host on estan situats els servidors.
+He creat el docker-compose amb els servidors.
+
+Amb el client **Samba** tot funciona correcte, ataco al host i la connexió es correcta. Inicio sessio amb un usuari ldap i hem **monta el homevia cifs**.
+
+Pel que fa al client **nfs** aquest pot inciar sessió amb un usuari ldap (autenticat amb kerberos) pero el home no se li monta per culpa d'una mala connexió amb el servidor. Es queixa que no pot accedir als **ports del servidor** pero no obstant aquests **estàn en funcionament** i accessibles des del host i el client nfs.
 
 
+* **SETMANA 5**
 
+Setmana que m'he centrat basicament en pulir i acabar de definir els scripts del projecte.
+Els **scripts** ja els dono per acabats, considero que ara mateix estàn força bé, i ara toca centrar-se amb el **dns i dhcp**
+Pel que fa al client **nfs** encara no he trobat la sol·lució al problema.
+A tot aixo hem queda pendent acabar aquests dockers i documentar tot el fet.
 
 
 
