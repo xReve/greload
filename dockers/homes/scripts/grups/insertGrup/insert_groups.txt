@@ -1,6 +1,5 @@
-beef-xss:x:142:new,skeret
-docker:x:998:
-pere:x:1000:
+docker:x:998:pere
+pere:x:1000:pere
 kvm:x:143:
 render:x:144:
 geoclue:x:115:
@@ -8,3 +7,6 @@ tss:x:145:
 wireshark:x:146:
 Debian-snmp:x:105:
 systemd-coredump:x:997:
+bumaie:x:8000:
+eric:x:11111:
+xd

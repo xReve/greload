@@ -1,7 +1,9 @@
 #! /bin/bash
-# Script per crear el principal de kerberos per cada nou usuari introduit a LDAP 
+# SCRIPT DE CREACIÓ DELS PRINCIPALS DE KERBEROS PER CADA USUARI ACCEPTAT
+# Eric Escriba
+# M14 PROJECTE
 
-fileUsers=$1 # 	Fitxer del format /etc/passwd 
+fileUsers=$1 # Fitxer amb els users i homes valids 
 creats=0
 fails=0
 
@@ -25,3 +27,4 @@ done < $fileUsers
 echo "TOTAL:"
 echo "Succeed: $creats"
 echo "Fail: $fails"
+exit 0

@@ -1,8 +1,11 @@
 #! /bin/bash
-# Script automatizat per l'esborrat de grups (entrada a la DB i el seu directori)
+# SCRIPT COMPLERT DE L'ESBORRAT DE GRUPS
+# RECOPILA TOTS ELS SCRIPTS EN UN SOL SCRIPT QUE HO FA TOT
+# Eric Escriba
+# M14 PROJECTE
 
 # Creació LDIF
-python baixa_grups.py Grups_to_delete.txt
+python baixa_grups.py delete_groups.txt
 
 # Checkpoint
 echo "Vols continuar?"
@@ -23,13 +26,25 @@ do
 	fi
 done
 
+echo ""
+echo "ATENCIO"
+echo "Ara s'esborraran el grups seleccionats anteriorment"
+sleep 5
 
 # Esborrat Grups
 
-ldapdelete -x -w secret -h ldap.edt.org -D "cn=Manager,dc=edt,dc=org" -f grup_delete.ldif
+ldapdelete -x -w operador -h ldap.edt.org -D "uid=operador,ou=usuaris,dc=edt,dc=org" -f grup_delete.ldif
+
+echo ""
+echo "Ara s'esborraran els directoris dels grups esborrats"
+sleep 5
 
 # Esborrat directori grup
 
-bash delete_home.sh Grups_to_delete.txt
+bash delete_home.sh grups_acceptats.txt
 
+
+echo ""
+echo "SCRIPT D'ESBORRAT DE GRUPS FINALITZAT"
+exit 0
 

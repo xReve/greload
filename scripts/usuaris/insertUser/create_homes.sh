@@ -1,7 +1,9 @@
 #! /bin/bash
-# Script per crear el home de l'usuari
+# SCRIPT DE CREACIÓ DELS HOMES DELS USUARIS SEGONS EL GRUP AL QUE PERTANYEN
+# Eric Escriba
+# M14 PROJECTE
 
-fileUsers=$1 # Fitxer amb els homes dels usuaris que s'han processat en el script alta_users i que s'han de crear 
+fileUsers=$1 # Fitxer amb els users i homes valids 
 creats=0
 fails=0
 
@@ -25,3 +27,8 @@ do
   fi
 
 done < $fileUsers
+
+echo "TOTAL:"
+echo "Succeed: $creats"
+echo "Fail: $fails"
+exit 0 

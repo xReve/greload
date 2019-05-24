@@ -1,5 +1,7 @@
 #! /usr/bin/python
 # -*- coding: utf-8 -*-
+# Eric Escriba
+# M14 PROJECTE
 
 import sys
 import subprocess 

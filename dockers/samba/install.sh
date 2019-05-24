@@ -21,11 +21,6 @@ cp /opt/docker/nsswitch.conf /etc/nsswitch.conf
 
 # SSH
 /usr/bin/ssh-keygen -A
-cp /opt/docker/sshd_config /etc/ssh/sshd_config
-
-# kerberos
-
-cp /opt/docker/krb5.conf /etc/krb5.conf
 
 # Passwd root
 

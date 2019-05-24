@@ -1,5 +1,8 @@
 #! /bin/bash
-# Script automatizat per l'esborrat de grups (entrada a la DB i el seu directori)
+# SCRIPT COMPLERT DE L'ESBORRAT DE GRUPS
+# RECOPILA TOTS ELS SCRIPTS EN UN SOL SCRIPT QUE HO FA TOT
+# Eric Escriba
+# M14 PROJECTE
 
 # Creació LDIF
 python data/baixa_grups.py delete_groups.txt

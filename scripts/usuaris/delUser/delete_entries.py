@@ -1,5 +1,7 @@
 #! /usr/bin/python
 # -*- coding: utf-8 -*-
+# Eric Escriba
+# M14 PROJECTE
 
 import sys 
 import subprocess 
@@ -26,7 +28,7 @@ def delete_user_entry(user,grup):
 	
 	line = 'dn: cn=%s,ou=grups,dc=edt,dc=org\n' \
 			'changetype: modify\n' \
-			'delete: memberUidn\n' \
+			'delete: memberUid\n' \
 			'memberUid: %s\n\n' % (grup,user)
 	
 	return line

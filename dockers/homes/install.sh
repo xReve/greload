@@ -20,6 +20,7 @@ mkdir /home/grups/wiam1
 mkdir /home/grups/wiam2
 mkdir /home/grups/wiaw1
 mkdir /home/grups/wiaw2
+mkdir /home/grups/profes
 mkdir /home/grups/test
 mkdir /home/grups/admin
 mkdir /home/grups/test/pere

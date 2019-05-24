@@ -1,7 +1,9 @@
 #! /bin/bash
-# Script per crear el directori del grup al VOLUME de homes
+# SCRIPT PER CREAR EL DIRECTORI DEL GRUP AL VOLUM COMPARTIT
+# Eric Escriba
+# M14 PROJECTE
 
-fileGrups=$1
+fileGrups=$1 # Fitxer amb noms de grups acceptats per ser creats
 creats=0
 fails=0
 
@@ -22,5 +24,5 @@ done < $fileGrups
 echo "TOTAL:"
 echo "Succeed: $creats"
 echo "Fail: $fails"
-
+exit 0
 

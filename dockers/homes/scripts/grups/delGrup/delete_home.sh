@@ -1,7 +1,9 @@
 #! /bin/bash
-# Script per esborrar el directori del grup del VOLUME de homes
+# SCRIPT PER ESBORRAR EL DIRECTORI DEL GRUP ESBORRAT DEL VOLUME
+# Eric Escriba
+# M14 PROJECTE
 
-fileGrups=$1
+fileGrups=$1 # Fitxer amb els noms de grup acceptats
 esborrats=0
 fails=0
 
@@ -17,12 +19,10 @@ do
       echo "$grup no s'ha pogut esborrar"
       fails=$((fails+1))
   fi
-  
 done < $fileGrups
 
 echo "TOTAL:"
 echo "Succeed: $esborrats"
 echo "Fail: $fails"
 
-
-
+exit 0

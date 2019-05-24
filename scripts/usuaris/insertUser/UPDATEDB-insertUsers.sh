@@ -1,4 +1,8 @@
 #! /bin/bash
+# SCRIPT COMPLERT DE LA CREACIÓ DE COMPTES D'USUARI
+# RECOPILA TOTS ELS SCRIPTS EN UN SOL SCRIPT QUE HO FA TOT
+# Eric Escriba
+# M14 PROJECTE
 
 # Creació fitxers ldif
 python alta_users.py insert_users.txt

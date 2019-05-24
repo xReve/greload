@@ -1,4 +1,9 @@
 #! /bin/bash
+# SCRIPT COMPLERT DE LA CREACIÓ DE GRUPS
+# RECOPILA TOTS ELS SCRIPTS EN UN SOL SCRIPT QUE HO FA TOT
+# Eric Escriba
+# M14 PROJECTE
+
 
 # Creació LDIF
 python insercio_grups.py insert_groups.txt

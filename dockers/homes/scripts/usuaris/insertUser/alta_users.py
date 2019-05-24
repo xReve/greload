@@ -1,9 +1,10 @@
 #! /usr/bin/python
 # -*- coding: utf-8 -*-
+# Eric Escriba
+# M14 PROJECTE
 
 import sys
 import subprocess 
-import os
 
 # Funcions
 
@@ -63,14 +64,14 @@ def modify_ldif(grup,user):
 	
 	return line
 
-# Constants
-ERR = "ldap_sasl_bind(SIMPLE): Can't contact LDAP server (-1)"
+# CONSTANTS
+CON = 'ldap.edt.org'
 
 # Declarem
 fileIn = sys.argv[1] # Usuaris
 fileOut = 'usuaris_alta.ldif' # Fitxer ldif sortida
 fileOutmod = 'usuaris_append_grup.ldif' # Fitxer modificació grup
-fileHomes = 'userhomes.txt' # Fitxer amb els homes dels usuaris
+fileHomes = 'userhomes.txt' # Fitxer amb els homes dels usuaris i el login
 error_log = "error_log/usuaris_error.log" # Fitxer errors
 
 # Obrim fitxers
@@ -96,61 +97,57 @@ for linia in entrada:
 		uid = llista_camps[2]
 		gid = llista_camps[3]
 		shell = llista_camps[6]
-		# Obtenció del grup
-		# Connexió LDAP	
-		search = "ldapsearch -x -LLL -b 'ou=grups,dc=edt,dc=org' -h ldap.edt.org " \
-		"gidNumber=%s dn | cut -f1 -d ',' | cut -f2 -d ' ' | cut -f2 -d '=' " % (gid)
 		
-		# Comprovació de la connexió
-		pipeErr = subprocess.check_output([search],stderr=subprocess.STDOUT,shell=True)
-		out_err = pipeErr.strip()
-		
-		# Si no hi ha connexió tanquem
-		if out_err == ERR:
+		try:
+			# Comprovar que l'usuari no existeix a la BDD.
+			check = "ldapsearch -x -LLL -h %s -b 'dc=edt,dc=org' 'uid=%s' 'dn'" % (CON,login)
+			pipeData = subprocess.check_output([check],stderr=subprocess.STDOUT,shell=True)
+			user_id = pipeData.strip()
+			# Si l'usuari no esta a LDAP
+			if user_id == '':
+				# Obtenció del grup
+				# Connexió LDAP	
+				search = "ldapsearch -x -LLL -h %s -b 'dc=edt,dc=org' " \
+				"'gidNumber=%s' 'dn' | cut -f1 -d ',' | cut -f2 -d ' ' | cut -f2 -d '=' " % (CON,gid)
+				pipeData = subprocess.check_output([search],stderr=subprocess.STDOUT,shell=True)
+				grup = pipeData.strip()
+				
+				# Si l'usuari no té un grup a la BBDD no es pot afegir
+				if grup == '':
+					err.write('User %s no te un grup existent a la BBDD. Crei el grup i despres afegeix lusuari \n' % login)
+					denied += 1
+				else:
+					# Comprovem a quin grup pertany i li creem el tag (iam,isx,iaw)
+					if 'iam' in grup or 'isx' in grup or 'iaw' in grup:	
+						grup_tag = grup[1:-1]
+						new_login = grup_tag + login 
+					else:
+						new_login = login
+					
+					# Editem el home directory en funcio del grup
+					home = '/home/grups/%s/%s' % (grup,new_login)
+						
+					# Creació format ldif per l'usuari
+					entrada_user = insert_ldif(new_login,grup,uid,gid,shell,home)
+					
+					# Creació format ldif pel grup 
+					entrada_user_grup = modify_ldif(grup,new_login)
+					
+					# Guardem dos fitxers ldif
+					sortida_user.write(entrada_user)
+					sortida_grup.write(entrada_user_grup)
+					sortida_homes.write(new_login + ':' + home + '\n')
+					accept += 1
+			# Si l'usuari ja existeix a LDAP
+			else:
+				err.write("L'usuari %s ja existeix a LDAP\n" % (login))
+				denied += 1 
+		except subprocess.CalledProcessError:
 			sys.stderr.write('Bad connexion with LDAP\n')
 			exit(1)
-		
-		# Busquem el grup
-		pipeSearch = subprocess.Popen([search],stdout=subprocess.PIPE,shell=True)
-		count = 1
-		grup = ''
-		
-		# Llegim el grup
-		for line in pipeSearch.stdout:
-			if count == 1:
-				grup = line.strip()
-				count += 1
-		
-		# Si l'usuari no té un grup a la BBDD no es pot afegir
-		if grup == '':
-			err.write('User %s no te un grup existent a la BBDD. Crei el grup i despres afegeix lusuari \n ' % login)
-			denied += 1
-		else:
-			# Comprovem que pertany al grup d'alumnes 
-			# Creem el tag del grup de l'usuari (iam,isx,iaw)
-			if 'iam' in grup or 'isx' in grup or 'iaw' in grup:	
-				grup_tag = grup[1:-1]
-				new_login = grup_tag + login 
-			else:
-				new_login = login
-			
-			# Editem el home directory en funcio del grup
-			home = '/home/grups/%s/%s' % (grup,new_login)
-				
-			# Creació format ldif per l'usuari
-			entrada_user = insert_ldif(new_login,grup,uid,gid,shell,home)
-			
-			# Creació format ldif pel grup 
-			entrada_user_grup = modify_ldif(grup,new_login)
-			
-			# Guardem dos fitxers ldif
-			sortida_user.write(entrada_user)
-			sortida_grup.write(entrada_user_grup)
-			sortida_homes.write(new_login + ':' + home + '\n')
-			accept += 1
 	# Linia incorrecta
 	else:	
-		err.write('Linia dusuari incorrecta, revisi la linia %s \n' % (lectura))
+		err.write("Linia d'usuari incorrecta, revisi la linia %s \n" % (lectura))
 		denied += 1
 
 # Tancament	

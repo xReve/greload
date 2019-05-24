@@ -1,5 +1,7 @@
 #! /usr/bin/python
 # -*- coding: utf-8 -*-
+# Eric Escriba
+# M14 PROJECTE
 
 import sys
 
@@ -18,7 +20,7 @@ def insert_sambaUser(user,passwd):
 
 
 # Declarem
-fileIn = sys.argv[1] # Fitxer d'usuaris i homes.
+fileIn = sys.argv[1] # Fitxer d'usuaris i homes valids
 fileOut = 'usuaris_samba.sh' # Fitxer sortida preparat per introduir users a samba
 
 # Obrim fitxers
@@ -47,6 +49,6 @@ for line in entrada:
 # Tancament files
 entrada.close()
 sortida_user.close()
-
+exit(0)
 
 
