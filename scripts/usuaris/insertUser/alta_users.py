@@ -69,7 +69,7 @@ CON = 'ldap.edt.org'
 fileIn = sys.argv[1] # Usuaris
 fileOut = 'usuaris_alta.ldif' # Fitxer ldif sortida
 fileOutmod = 'usuaris_append_grup.ldif' # Fitxer modificació grup
-fileHomes = 'userhomes.txt' # Fitxer amb els homes dels usuaris
+fileHomes = 'userhomes.txt' # Fitxer amb els homes dels usuaris i el login
 error_log = "error_log/usuaris_error.log" # Fitxer errors
 
 # Obrim fitxers

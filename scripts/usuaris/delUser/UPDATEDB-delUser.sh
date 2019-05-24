@@ -43,11 +43,17 @@ sleep 5
 
 # Esborrar usuaris de kerberos
 
-
+bash delete_kerberos.sh usuaris_acceptats.txt
 
 # Esborrar usuaris de samba
 
+python delete_samba.py usuaris_acceptats.txt
 
+chmod +x usuaris_samba.sh
+
+scp usuaris_samba.sh root@samba.edt.org:/tmp
+
+ssh root@samba.edt.org "bash /tmp/usuaris_samba.sh"
 
 echo ""
 echo "CREACIO HOMES DEL USUARIS"

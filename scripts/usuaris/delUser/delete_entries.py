@@ -38,12 +38,14 @@ CON = 'ldap.edt.org'
 fileIn = sys.argv[1] # Usuaris
 fileOut_1 = 'usuaris_delete.ldif' # Fitxer ldif amb usuaris a borrar
 fileOut_2 = 'usuaris_group_del.ldif' # Fitxer ldif borrar usuari del grup
+fileOut_3 = 'usuaris_acceptats.txt' #Fitxer amb els usuaris valids per ser esborrats
 error_log = "error_log/usuarisDel_error.log" # Fitxer errors
 
 # Obrim fitxers
 entrada = open(fileIn,"rw")
 sortida_user = open(fileOut_1,"a")
 sortida_grup = open(fileOut_2, "a")
+user_ok = open(fileOut_3, "a")
 err = open(error_log,"a")
 
 # Contadors
@@ -81,7 +83,8 @@ for user in entrada:
 			
 			# Guardem
 			sortida_user.write(user_line)
-			sortida_grup.write(group_line)			
+			sortida_grup.write(group_line)		
+			user_ok.write(user + '\n')	
 			accept += 1
 		# Si no enviem missatge error
 		else:
@@ -97,6 +100,7 @@ err.close()
 entrada.close()
 sortida_user.close()
 sortida_grup.close()
+user_ok.close()
 
 print 'Total processats:'
 print 'Acceptats: %s (Consultar usuaris_delete.ldif)' % accept

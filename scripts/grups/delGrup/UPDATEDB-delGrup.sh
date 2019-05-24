@@ -2,7 +2,7 @@
 # Script automatizat per l'esborrat de grups (entrada a la DB i el seu directori)
 
 # Creació LDIF
-python data/baixa_grups.py data/delete_groups.txt
+python data/baixa_grups.py delete_groups.txt
 
 # Checkpoint
 echo "Vols continuar?"
@@ -30,7 +30,7 @@ sleep 5
 
 # Esborrat Grups
 
-ldapdelete -x -w operador -h ldap.edt.org -D "uid=operador,ou=usuaris,dc=edt,dc=org" -f data/grup_delete.ldif
+ldapdelete -x -w operador -h ldap.edt.org -D "uid=operador,ou=usuaris,dc=edt,dc=org" -f grup_delete.ldif
 
 echo ""
 echo "Ara s'esborraran els directoris dels grups esborrats"
@@ -38,7 +38,7 @@ sleep 5
 
 # Esborrat directori grup
 
-bash delete_home.sh data/grups_acceptats.txt
+bash delete_home.sh grups_acceptats.txt
 
 
 echo ""
