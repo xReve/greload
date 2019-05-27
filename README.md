@@ -9,13 +9,13 @@
 
 * **Gandhi** és el nom otorgat a l'estructura informàtica de l'escola la qual incorpora un servidor **LDAP**,servidor **KERBEROS**,servidor **NFS**,servidor **DNS** entre d'altres. 
 
-* Implementació dels serveis bàscis **d'autenticació** d'un usuari unix, és a dir, en aquest cas com que simulem la plataforma de l'escola hem d'aconseguir que atravès d'un compte d'usuari unix pugem autenticar-nos contra el servidor **LDAP** i obtenint la confirmació del password atravès del servidor de **KERBEROS**. 
+* Implementació dels serveis bàscis **d'autenticació** d'un usuari unix, és a dir, en aquest cas com que simulem la plataforma de l'escola hem d'aconseguir que atravès d'un compte d'usuari unix pugem autenticar-nos contra el servidor **LDAP** i obtenint la confirmació del password atravès del servidor de **KERBEROS**.  
 Una vegada és produeixi aquesta autenticació, aquest usuari requerirà d'un lloc de treball el qual serà importat d'una zona externa a aquests servidors, la qual estarà destinada a emmagatzemar els **homes** dels usuaris i el seu contingut. Per tant, una vegada acceptat l'usuari amb el seu password corresponent, se li montara una unitat al seu directori de treball (home) mitjançant un servidor **NFS** o bé **SAMBA**, depenet de la configuració del client.  
 
 
 ### ESTRUCTURA
 
-* El projecte és divideix en dos grans blocs: l'estructura de **contenidors Docker** (amb cadascun dels servidors i clients) i l'apartat de **scripting**
+* El projecte és divideix en dos grans blocs: l'estructura de **contenidors Docker** (amb cadascun dels servidors i clients) i l'apartat de **scripting**.
 
 #### CONTENIDORS
 ---
