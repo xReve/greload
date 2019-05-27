@@ -49,7 +49,11 @@ services:
       - "2049:2049"
       - "20048:20048"
     image: eescriba/nfsserver:greload
-    privileged: true
+    cap_add:
+      - SYS_ADMIN
+      - SYS_MODULE
+    volumes: 
+      - /lib/modules:/lib/modules:ro
     depends_on:
       - ldap
       - kerberos
