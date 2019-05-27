@@ -29,6 +29,12 @@ Una vegada és produeixi aquesta autenticació, aquest usuari requerirà d'un ll
 
 
 
+### REPRESENTACIÓ GRÀFICA
+
+![alt text](https://github.com/xReve/greload/aux/docker_cloud.png)
+
+![alt text](https://github.com/xReve/greload/aux/host.png)
+
 
 
 
