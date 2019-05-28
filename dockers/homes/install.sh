@@ -3,6 +3,12 @@
 # HOMES
 # -----------------------------------------------------------
 
+mkdir /opt/docker/usuaris/insertUser/error_log
+mkdir /opt/docker/usuaris/delUser/error_log
+mkdir /opt/docker/grups/insertGrup/error_log
+mkdir /opt/docker/grups/delGrup/error_log
+
+
 cp /opt/docker/nslcd.conf /etc/nslcd.conf
 cp /opt/docker/ldap.conf /etc/openldap/ldap.conf
 cp /opt/docker/nsswitch.conf /etc/nsswitch.conf

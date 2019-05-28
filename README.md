@@ -72,7 +72,7 @@ Aquests estàn localitzats en una xarxa interna de **docker**, cal destacar que 
 
 * Les imatges pertinents de cada contenidor Docker es troben emmagatzemades a [dockerhub](https://hub.docker.com/u/eescriba/)
 
-
+* Directori `aux` on és guarda contingut adicional al projecte
 
 aesborrar -> 
 **EXECUCIÓ DOCKERS**
