@@ -1,0 +1,14 @@
+dn: uid=iawuser01,ou=usuaris,dc=edt,dc=org
+changetype: modify
+add: mail
+mail: e@reve.com
+-
+add: mobile
+mobile: 6266262626
+-
+add: description
+description: Im the best
+-
+add: displayName
+displayName: eric reve
+

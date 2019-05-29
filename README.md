@@ -52,7 +52,9 @@ També cal afegir els usuaris samba, ja que és una part indispensable per poder
 Aquests estàn localitzats en una xarxa interna de **docker**, cal destacar que no nomès es podrien trobar en una xarxa docker, podrien estar en una màquina virtual, una màquina de amazon o qualsevol altre lloc virtualitzat, però en aquest cas s'ha fet en una xarxa docker.
 
 
-* Les fletxes **blaves** representen quins servidors estàn connectats pel servidor **LDAP**, és a dir, que tenen connectivitat entre ells i són capaços de fer consultes contra ell.
+* Les fletxes **blaves** representen quins servidors mantenen connexió amb **LDAP**, és a dir, que tenen connectivitat entre ells i són capaços de fer consultes contra ell.
+
+* Les fletxes **taronjes** mostren quins serveis/dockers tenen configurat el kerberos per poder autenticar-se en cas necessari. 
 
 * Les fletxes **vermelles** representen la relació que tenen els servidors **NFS** i **SAMBA** envers el contenidor **HOMES**. Aquesta connexió que existeix entre ells, permet que quan un usuari s'autentiqui contra LDAP i KERBEROS, una vegada confirmada aquesta autenticació, obtingui un directori de treball. Aquests servidors obtenen aquests directoris del contenidor **HOMES** i el monten al host on s'està connectant el client. 
 
