@@ -1,5 +1,14 @@
 version: "2"
 services:
+  dhcp:
+    container_name: dhcp.edt.org
+    ports: 
+      - "67:67/udp"
+      - "67:67/tcp"
+    image: eescriba/dhcpserver:greload
+    privileged: true
+    networks:
+      - gandhi-net
   ldap: 
     container_name: ldap.edt.org
     ports:
