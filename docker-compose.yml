@@ -1,5 +1,14 @@
 version: "2"
 services:
+  dns:
+    container_name: dns.edt.org
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+    privileged: true
+    image: eescriba/dnsserver:greload
+    networks:
+      - gandhi-net 
   dhcp:
     container_name: dhcp.edt.org
     ports: 
@@ -9,11 +18,15 @@ services:
     privileged: true
     networks:
       - gandhi-net
+    depends_on:
+      - dns
   ldap: 
     container_name: ldap.edt.org
     ports:
       - "389:389"
     image: eescriba/ldapserver:greload
+    depends_on:
+      - dhcp
     networks: 
       - gandhi-net
   kerberos:
@@ -59,9 +72,6 @@ services:
       - "20048:20048"
     image: eescriba/nfsserver:greload
     privileged: true
-    cap_add:
-      - SYS_ADMIN
-      - SYS_MODULE
     depends_on:
       - ldap
       - kerberos

@@ -1,0 +1,11 @@
+; Fitxer de configuració dels hosts de la zona:
+;   0.30.172.in-addr.arpa.
+
+$TTL 3D
+1.168.192.in-addr.arpa.  IN SOA gandhi.edt.org. gandhi.edt.org. 1 3M 1M 1W 1D
+    NS gandhi.edt.org.
+
+; llistat dels servidors i components troncals
+
+107	PTR	gandhi
+

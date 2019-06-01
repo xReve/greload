@@ -1,0 +1,21 @@
+; Fitxer de configuració dels hosts de la zona:
+; 	dns.edt.org  
+
+$TTL 3D
+@ IN SOA gandhi.edt.org. gandhi.edt.org. 1 3H 15M 1W 1D
+   NS gandhi
+    
+;Hosts same net
+
+gandhi		IN		A	192.168.1.107
+dns		CNAME 			gandhi
+dhcp		CNAME			gandhi	
+ldap		CNAME			gandhi
+kerberos	CNAME			gandhi
+homes		CNAME			gandhi
+samba		CNAME			gandhi
+nfs		CNAME			gandhi
+ssh		CNAME			gandhi
+http		CNAME 			gandhi
+
+

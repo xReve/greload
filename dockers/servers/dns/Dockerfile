@@ -1,11 +1,9 @@
-# Version: 0.0.1
-# @edt M06 2018-2019
-# ldapserver base edt.org
+# DNS SERVER
 # -------------------------------------
 FROM fedora:27
 LABEL author="ERIC ESCRIBA"
-LABEL description="ldapserver edt.org uid dataDB"
-RUN dnf -y install procps openldap-clients openldap-servers
+LABEL description="DNS SERVER"
+RUN dnf -y install procps bind nmap 
 RUN mkdir /opt/docker
 COPY * /opt/docker/
 RUN chmod +x /opt/docker/install.sh /opt/docker/startup.sh
