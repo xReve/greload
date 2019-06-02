@@ -1,7 +1,3 @@
-iawuser01
-iawuser02
-iawuser03
-isxuser21
 pere
 anna
 marta

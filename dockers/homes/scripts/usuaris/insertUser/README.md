@@ -53,7 +53,7 @@ Per trobar a quin grup pertany, és fa una consulta al ldap i es processa la sor
 	- La **linia** d'usuari està mal escrita: tampoc es processa i genera un error.
  
 
-* Aquest script reb un únic argument,`insert_users.txt`, un fitxer d'usuaris amb el format que hem comentat, i retorna **4 fitxers**:
+* Aquest script reb un únic argument,`insert_users.txt`, un fitxer d'usuaris amb el format que hem comentat, i retorna 4 fitxers:
 
 `usuaris_alta.ldif` -> Fitxer en format ldif on s'emmagatzema cada **usuari vàlid** que s'ha processat i està **preparat** per ser injectat a LDAP
 
@@ -136,11 +136,6 @@ Al finalitzar l'script mostra el recompte total d'usuaris processats correctamen
 
 * Aquest script no retorna cap fitxer.
 
-**EXECUCIÓ**
-
-```
-kadmin -p operador -w operador -q "addprinc -pw  $user $passwd
-```
 
 #### SECCIÓ SAMBA
 ---
@@ -184,7 +179,7 @@ ssh root@samba.edt.org "bash /tmp/usuaris_samba.sh"
 
 ### SCRIPT GLOBAL
 
-* Per fer tota aquesta feina molt més fàcil i eficaç, he creat un script que incorpora cada pas i on et va informant en cada moment del que està succeint i que passarà.
+* Per fer tota aquesta feina molt més facil i eficaç, he creat un script que incorpora cada pas i on et va informant en cada moment del que està succeint i que passarà.
 
 * Aquest script de bash és diu `UPDATEDB-insertUsers.sh` i segueix l'estructura en ordre que hem comentat.
 

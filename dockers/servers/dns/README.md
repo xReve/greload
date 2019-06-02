@@ -8,3 +8,11 @@ https://docs.docker.com/v17.09/engine/userguide/networking/default_network/confi
 
 
 http://www.damagehead.com/blog/2015/04/28/deploying-a-dns-server-using-docker/
+
+
+
+https://serverfault.com/questions/426023/dns-server-behind-nat
+
+https://github.com/moby/moby/issues/11998
+
+https://github.com/rancher/rancher/issues/3036

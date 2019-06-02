@@ -7,7 +7,7 @@ $TTL 3D
     
 ;Hosts same net
 
-gandhi		IN		A	192.168.1.107
+gandhi		IN		A	192.168.0.170
 dns		CNAME 			gandhi
 dhcp		CNAME			gandhi	
 ldap		CNAME			gandhi
