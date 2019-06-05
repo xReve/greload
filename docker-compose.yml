@@ -57,8 +57,6 @@ services:
     image: eescriba/sambaserver:greload 
     privileged: true
     depends_on:
-      - ldap
-      - kerberos
       - homes
     volumes_from:
       - homes
@@ -73,12 +71,19 @@ services:
     image: eescriba/nfsserver:greload
     privileged: true
     depends_on:
-      - ldap
-      - kerberos
-      - homes
       - samba
     volumes_from:
       - homes
+    networks:
+      - gandhi-net
+  sshd:
+    container_name: ssshd.edt.org
+    ports: 
+      - "1022:22"
+    image: eescriba/sshdserver:greload
+    privileged: true
+    depends_on:
+      - nfs
     networks:
       - gandhi-net
 networks:
