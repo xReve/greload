@@ -77,7 +77,7 @@ services:
     networks:
       - gandhi-net
   sshd:
-    container_name: ssshd.edt.org
+    container_name: sshd.edt.org
     ports: 
       - "1022:22"
     image: eescriba/sshdserver:greload

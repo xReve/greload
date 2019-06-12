@@ -1,6 +1,8 @@
 #! /bin/bash
-# @edt ASIX M06 2018-2019
-# instal.lacio slapd edt.org
+# GANDHI RELOAD
+## @edt ASIX M14-PROJECTE Curs 2018-2019
+## Èric Escribà
+## instal·lacio servidor LDAP
 # -------------------------------------
 cp  /opt/docker/ldap.conf /etc/openldap/ldap.conf
 

@@ -1,7 +1,8 @@
 #! /bin/bash
-# @edt ASIX M06 2018-2019
-# instal.lacio
-#  - crear usuaris locals
+# GANDHI RELOAD
+## @edt ASIX M14-PROJECTE Curs 2018-2019
+## Èric Escribà
+# Instal·lacio SERVIDOR SAMBA
 # -------------------------------------
 
 mkdir /var/lib/samba/homes
@@ -32,7 +33,7 @@ echo -e "pere\npere" | smbpasswd -a pere
 echo -e "pau\npau" | smbpasswd -a pau
 echo -e "anna\nanna" | smbpasswd -a anna
 echo -e "marta\nmarta" | smbpasswd -a marta
-echo -e "operador\noperador" | smbpasswd -a operator
+echo -e "operador\noperador" | smbpasswd -a operador
 
 
 

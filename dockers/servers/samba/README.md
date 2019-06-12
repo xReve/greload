@@ -1,6 +1,11 @@
-# SERVIDOR SAMBA
-
+# GANDHI RELOAD
 ## @edt ASIX M14-PROJECTE Curs 2018-2019
+## Èric Escribà
+
+## SERVIDOR SAMBA
+
+* En aquesta part del projecte està desenvolupat el servidor **SAMBA**.
+
 
 Servidor que permet el montatge d els homes dels usuaris LDAP a travès del volum que se li monta al engegarse del docker **homes**.
 
@@ -28,10 +33,10 @@ drwxr-xr-x 2 root root 4096 May  9 16:17 wiaw2
 ```
 
 
-* **EXECUCIÓ**
+* En cas de voler ser **executat** sense cap altre component, és pot fer de la següent manera:
 
 ```
-docker run --rm --name samba.edt.org -h samba.edt.org --network gandhi-net --privileged --volumes-from homes.edt.org -d eescriba/samba:greload
+docker run --rm --name samba.edt.org -h samba.edt.org --network network_name --privileged --volumes-from homes.edt.org -d eescriba/samba:greload
 
 ```
 

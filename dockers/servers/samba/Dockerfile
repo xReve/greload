@@ -1,6 +1,7 @@
-# Version: 0.0.1
-# @edt M06 2018-2019
-# SAMBA:18HOMES
+# GANDHI RELOAD
+## @edt ASIX M14-PROJECTE Curs 2018-2019
+## Èric Escribà
+# Dockerfile SERVER SAMBA
 # -------------------------------------
 FROM fedora:27
 LABEL author="@edt ASIX M06-ASO"
