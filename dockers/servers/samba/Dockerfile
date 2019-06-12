@@ -4,8 +4,8 @@
 # Dockerfile SERVER SAMBA
 # -------------------------------------
 FROM fedora:27
-LABEL author="@edt ASIX M06-ASO"
-LABEL description="host PAM-SAMBA 2018-2019"
+LABEL author="ERIC ESCRIBA"
+LABEL description="Samba Server"
 RUN dnf -y install procps passwd openldap-clients nss-pam-ldapd pam_mount cifs-utils samba samba-client openssh-server
 RUN mkdir /opt/docker
 COPY * /opt/docker/

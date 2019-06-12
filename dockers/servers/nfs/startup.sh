@@ -1,5 +1,7 @@
 #! /bin/bash
-# @edt ASIX M06 2018-2019
+# GANDHI RELOAD
+## @edt ASIX M14-PROJECTE Curs 2018-2019
+## Èric Escribà
 # startup.sh
 # -------------------------------------
 
@@ -10,13 +12,12 @@
 /usr/sbin/rpcbind && echo "rpcbind Ok"
 /usr/sbin/rpc.statd && echo "rpc.stad Ok"
 /usr/sbin/rpc.nfsd && echo "rpc.nfsd Ok"
-/usr/sbin/rpc.mountd && echo "rpc.mountd Ok"
 /usr/sbin/exportfs -av
+/usr/sbin/rpc.mountd -V 3 -F
 
-while [ 1 ]
-do
-  a=1
-done
 
-#/bin/bash
+#while [ 1 ]
+#do
+#  a=1
+#done
 

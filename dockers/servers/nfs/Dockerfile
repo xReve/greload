@@ -1,10 +1,12 @@
 # Version: 0.0.1
-# @edt M06 2018-2019
-# hostpam
+# GANDHI RELOAD
+## @edt ASIX M14-PROJECTE Curs 2018-2019
+## Èric Escribà
+# Dockerfile NFS SERVER
 # -------------------------------------
 FROM fedora:27
-LABEL author="@edt ASIX M06-ASO"
-LABEL description="host PAM 2018-2019"
+LABEL author="ERIC ESCRIBA"
+LABEL description="NFS SERVER"
 RUN dnf -y install procps passwd openldap-clients nss-pam-ldapd  pam_mount nfs-utils
 RUN mkdir /opt/docker
 COPY * /opt/docker/

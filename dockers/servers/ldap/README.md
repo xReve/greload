@@ -4,7 +4,7 @@
 
 ## SERVIDOR LDAP
 
-* En aquest apartat del projecte tenim el servidor LDAP. Aquest servidor és l'encarregat d'enmagatzemar els comptes d'usuari de la organització.
+* En aquest apartat del projecte tenim el servidor **LDAP**. Aquest servidor és l'encarregat d'enmagatzemar els comptes d'usuari de la organització.
 
 * Per poder desenvolupar aquest servidor s'han instal·lat els paquets **openldap-clients** i **openldap-servers**
 

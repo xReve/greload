@@ -1,4 +1,9 @@
 #! /bin/bash
+# GANDHI RELOAD
+## @edt ASIX M14-PROJECTE Curs 2018-2019
+## Èric Escribà
+# install.sh
+####################################
 
 cp /opt/docker/nslcd.conf /etc/nslcd.conf
 cp /opt/docker/ldap.conf /etc/openldap/ldap.conf
