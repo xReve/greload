@@ -43,7 +43,7 @@ Per poder duur a terme l'esborrat d'un compte d'usuari, és necessari seguir una
 
 * Una vegada s'intenta l'esborrat aquest script ens retorna si ha anat be o ha fallat, en la finalització de l'execució ens retorna el total de homes esobrrats i els fallits.
 
-* Aquest script reb un fitxer amb usuaris **vàlids** per ser esborrats. Aquests usuaris que han estat determinat vàlids han estat processats per l'script `delete_entries.py` i els ha guardat en un fitxer de format **txt** anomenat `usuaris_acceptats.txt`.
+* Aquest script reb un fitxer amb usuaris **vàlids** per ser esborrats. Aquests usuaris que han estat determinats vàlids, han estat processats per l'script `delete_entries.py` i els ha guardat en un fitxer de format **txt** anomenat `usuaris_acceptats.txt`.
 
 * El fitxer `usuaris_acceptats.txt` contè un nom usuari (login) per línia.
 

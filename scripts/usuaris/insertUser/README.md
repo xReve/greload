@@ -188,7 +188,7 @@ ssh root@samba.edt.org "bash /tmp/usuaris_samba.sh"
 
 * Aquest script de bash és diu `UPDATEDB-insertUsers.sh` i segueix l'estructura en ordre que hem comentat.
 
-* Per poder veureu amb més detall aqui deixo una captura de l'execució de l'script amb un fitxer d'usuaris el qual tots els usuaris en aquest cas són vàlids.
+* Per poder veureu amb més detall aquí deixo una captura de l'execució de l'script amb un fitxer d'usuaris el qual tots els usuaris en aquest cas són vàlids.
 
 **EXECUCIÓ UPDATEDB-insertUsers.sh**
 
