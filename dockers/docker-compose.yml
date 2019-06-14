@@ -11,7 +11,7 @@ services:
       - gandhi-net 
   dhcp:
     container_name: dhcp.edt.org
-    ports: 
+    ports:
       - "67:67/udp"
       - "67:67/tcp"
     image: eescriba/dhcpserver:greload

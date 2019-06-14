@@ -16,4 +16,4 @@ cp /opt/docker/ldap.conf /etc/openldap/ldap.conf
 cp /opt/docker/nsswitch.conf /etc/nsswitch.conf
 cp /opt/docker/system-auth /etc/pam.d/system-auth
 cp /opt/docker/pam_mount.conf.xml /etc/security/pam_mount.conf.xml
-
+echo "192.168.2.44 ldap.edt.org kserver.edt.org samba.edt.org" >> /etc/hosts

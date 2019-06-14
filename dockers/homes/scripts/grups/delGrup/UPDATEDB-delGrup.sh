@@ -5,7 +5,7 @@
 # M14 PROJECTE
 
 # Creació LDIF
-python data/baixa_grups.py delete_groups.txt
+python baixa_grups.py delete_groups.txt
 
 # Checkpoint
 echo "Vols continuar?"

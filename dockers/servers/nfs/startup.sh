@@ -13,7 +13,7 @@
 /usr/sbin/rpc.statd && echo "rpc.stad Ok"
 /usr/sbin/rpc.nfsd && echo "rpc.nfsd Ok"
 /usr/sbin/exportfs -av
-/usr/sbin/rpc.mountd -V 3 -F
+/usr/sbin/rpc.mountd -F
 
 
 #while [ 1 ]
