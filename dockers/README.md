@@ -16,3 +16,19 @@
 
 * Les imatges pertinents de cada contenidor Docker es troben emmagatzemades a [IMATGES_DOCKERS](https://hub.docker.com/u/eescriba/)
 
+
+### DESPLEGAMENT
+
+* El llançament dels servidors en la xarxa interna de docker es durà a terme a traves d'un fitxer anomenat `docker_compose.yml`.
+
+* Abans d'iniciar l'execució hem de tenir en compte una sèrie de punts perquè aquesta es faci correctament:
+
+	- 
+	
+	- 
+
+	-
+	
+	- 
+
+

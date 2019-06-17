@@ -1,5 +1,7 @@
 #! /bin/bash
-# @edt ASIX-M06
+# GANDHI RELOAD
+## @edt ASIX M14-PROJECTE Curs 2018-2019
+## Èric Escribà
 # -----------------
 
 authconfig  --enableshadow --enablelocauthorize --enableldap \
