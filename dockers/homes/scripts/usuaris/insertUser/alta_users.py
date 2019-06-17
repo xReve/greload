@@ -100,7 +100,7 @@ for linia in entrada:
 		
 		try:
 			# Comprovar que l'usuari no existeix a la BDD.
-			check = "ldapsearch -x -LLL -h %s -b 'dc=edt,dc=org' 'uid=%s' 'dn'" % (CON,login)
+			check = "ldapsearch -x -LLL -h %s -b 'dc=edt,dc=org' 'uid=*%s' 'dn'" % (CON,login)
 			pipeData = subprocess.check_output([check],stderr=subprocess.STDOUT,shell=True)
 			user_id = pipeData.strip()
 			# Si l'usuari no esta a LDAP

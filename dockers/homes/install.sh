@@ -17,6 +17,7 @@ cp /opt/docker/nsswitch.conf /etc/nsswitch.conf
 /usr/sbin/nscd && echo "nscd Ok"
 
 cp /opt/docker/krb5.conf /etc/krb5.conf
+cp /opt/resolv.conf /etc/resolv.conf
 #--------------------------------
 
 mkdir /home/grups
@@ -46,5 +47,11 @@ chown -R pau.test /home/grups/test/pau
 chown -R anna.test /home/grups/test/anna
 chown -R marta.test /home/grups/test/marta
 chown -R operador.admin /home/grups/admin/operador
+
+
+
+echo "172.30.0.4 ldap.edt.org" >> /etc/hosts
+echo "172.30.0.5 kserver.edt.org" >> /etc/hosts
+echo "172.30.0.7 samba.edt.org" >> /etc/hosts
 
 
