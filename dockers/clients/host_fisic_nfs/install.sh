@@ -10,13 +10,13 @@ dnf -y install procps passwd openldap-clients nss-pam-ldapd authconfig pam_mount
 # COPY FILES
 
 cp nslcd.conf /etc/nslcd.conf
-cp /opt/docker/nsswitch.conf /etc/nsswitch.conf
-cp /opt/docker/ldap.conf /etc/openldap/ldap.conf
+cp nsswitch.conf /etc/nsswitch.conf
+cp ldap.conf /etc/openldap/ldap.conf
 
-cp /opt/docker/krb5.conf /etc/krb5.conf
+cp krb5.conf /etc/krb5.conf
 
-cp /opt/docker/pam_mount.conf.xml /etc/security/pam_mount.conf.xml
-cp /opt/docker/system-auth /etc/pam.d/system-auth
+cp pam_mount.conf.xml /etc/security/pam_mount.conf.xml
+cp system-auth /etc/pam.d/system-auth
 
 cp resolv.conf /etc/resolv.conf
 cp sssd.conf /etc/sssd/sssd.conf
