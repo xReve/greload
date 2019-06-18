@@ -1,1 +1,1 @@
-/home/grups 192.168.*.*(rw,sync)
+/home/grups 192.168.2.0/16(rw,sync,root_squash)

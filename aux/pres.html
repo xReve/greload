@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Èric Escribà" />
+  <title>GANDHI RELOAD</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+   href="estil.css" />
+  <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">GANDHI RELOAD</h1>
+  <p class="author">
+Èric Escribà
+  </p>
+</div>
+<div id="seccions-i-objectius" class="slide section level1">
+<h1>SECCIONS I OBJECTIUS</h1>
+<ul>
+<li><p>ESTRUCTURA INFORMÀTICA (servidors,clients)</p></li>
+<li><p>SCRIPTING (alta i baixa usuaris/grups)</p></li>
+<li><p>Lloc de treball</p></li>
+<li><p>Eficient i reutilitzable</p></li>
+<li><p>Automatització de tasques</p></li>
+</ul>
+</div>
+<div id="estructura-informàtica" class="slide section level1">
+<h1>ESTRUCTURA INFORMÀTICA</h1>
+<p><img src="docker_cloud.png" /></p>
+<p><img src="host.png" /></p>
+</div>
+<div id="servidors" class="slide section level1">
+<h1>SERVIDORS</h1>
+<h2 id="servidor-ldap">SERVIDOR LDAP</h2>
+<pre><code>dn: dc=edt,dc=org
+dc: edt
+description: Escola del treball de Barcelona
+objectClass: dcObject
+objectClass: organization
+o: edt.org</code></pre>
+<ul>
+<li>Aquesta base de dades està formada per <strong>usuaris</strong>,<strong>hosts</strong>,<strong>aules</strong> i <strong>grups</strong>.</li>
+</ul>
+<pre><code>dn: ou=usuaris,dc=edt,dc=org
+ou: usuaris
+description: Container per usuaris del sistema linux
+objectClass: organizationalunit
+
+dn: ou=grups,dc=edt,dc=org
+ou: groups
+ou: grups
+description: Container per a grups
+objectClass: organizationalunit</code></pre>
+</div>
+<div id="servidor-ldap-1" class="slide section level1">
+<h1>SERVIDOR LDAP</h1>
+<ul>
+<li>Tant els usuaris com els hosts estàn definits com a <strong>PosixAccount</strong>, en el cas dels grups estàn definits com a <strong>PosixGrup</strong>.</li>
+</ul>
+<pre><code>dn: uid=pere,ou=usuaris,dc=edt,dc=org
+objectClass: posixAccount
+objectClass: inetOrgPerson
+cn: Pere Pou
+sn: Pou
+homePhone: 555-222-2221
+mail: pere@edt.org
+description: Watch out for this guy
+ou: test
+uid: pere
+uidNumber: 1002
+gidNumber: 200
+loginShell: /bin/bash
+homeDirectory: /home/grups/test/pere
+userPassword:: e1NTSEF9Z2htdFJMMTFZdFhvVWhJUDd6NmY3bmI4UkNOYWRGZSs=
+
+dn: cn=test,ou=grups,dc=edt,dc=org
+cn: test
+gidNumber: 200
+description: Grup d&#39;usuaris de proves
+memberUid: pere
+memberUid: anna
+memberUid: marta
+memberUid: pau
+objectClass: posixGroup</code></pre>
+</div>
+<div id="servidor-ldap-2" class="slide section level1">
+<h1>SERVIDOR LDAP</h1>
+<ul>
+<li><p>Usuari <strong>operador</strong> com a administrador.</p></li>
+<li><p>Definició permisos administrador</p></li>
+</ul>
+<pre><code>access to * by dn.exact=&quot;uid=operador,ou=usuaris,dc=edt,dc=org&quot; manage by self write by * read</code></pre>
+</div>
+<div id="servidor-ldap-3" class="slide section level1">
+<h1>SERVIDOR LDAP</h1>
+<p>GRUPS PREDEFINITS</p>
+<pre><code>dn: cn=admin,ou=grups,dc=edt,dc=org
+
+dn: cn=hosts,ou=grups,dc=edt,dc=org
+
+dn: cn=profes,ou=grups,dc=edt,dc=org
+
+dn: cn=test,ou=grups,dc=edt,dc=org
+
+dn: cn=wiaw1,ou=grups,dc=edt,dc=org
+
+dn: cn=wiaw2,ou=grups,dc=edt,dc=org
+
+dn: cn=hisx1,ou=grups,dc=edt,dc=org
+
+dn: cn=hisx2,ou=grups,dc=edt,dc=org
+
+dn: cn=wiam1,ou=grups,dc=edt,dc=org</code></pre>
+</div>
+<div id="servidor-kerberos" class="slide section level1">
+<h1>SERVIDOR KERBEROS</h1>
+<ul>
+<li><p>Proveïdor d’autenticació (Autenticaction Provider)</p></li>
+<li><p>Emmagatzema i gestiona els passwords dels usuaris. <strong>Principals</strong></p></li>
+</ul>
+<p><strong>nom/instància@regne</strong></p>
+<pre><code>operador@EDT.ORG *</code></pre>
+<ul>
+<li>Kerberos Reialm <strong>EDT.ORG</strong> (Xarxa)</li>
+</ul>
+</div>
+<div id="zona-homes" class="slide section level1">
+<h1>ZONA HOMES</h1>
+<ul>
+<li><p>Zona d’<strong>emmagatzematge</strong> dels homes dels usuaris.</p></li>
+<li><p>Connectivitat amb els servidors</p></li>
+<li><p>Volum de dades</p></li>
+</ul>
+<pre><code>VOLUME /home</code></pre>
+<ul>
+<li>Zona d’scripting</li>
+</ul>
+</div>
+<div id="servidor-samba" class="slide section level1">
+<h1>SERVIDOR SAMBA</h1>
+<ul>
+<li><p>Encarregat de fer el montatge possible.</p></li>
+<li><p>Usuaris <strong>samba</strong></p></li>
+</ul>
+<pre><code>echo -e &quot;operador\noperador&quot; | smbpasswd -a operador</code></pre>
+<p><strong>EXEMPLE</strong></p>
+<pre><code>[iamuser60@shost ~]$ df -h
+Filesystem                 Size  Used Avail Use% Mounted on
+overlay                    370G  125G  227G  36% /
+tmpfs                       64M     0   64M   0% /dev
+tmpfs                      3.9G     0  3.9G   0% /sys/fs/cgroup
+/dev/sda5                  370G  125G  227G  36% /etc/hosts
+shm                         64M     0   64M   0% /dev/shm
+//samba/iamuser60  370G  144G  227G  39% /home/grups/wiam2/iamuser60/iamuser60</code></pre>
+</div>
+<div id="servidor-nfs" class="slide section level1">
+<h1>SERVIDOR NFS</h1>
+<p><strong>EXEMPLE</strong></p>
+</div>
+<div id="servidor-dns-i-dhcp" class="slide section level1">
+<h1>SERVIDOR DNS I DHCP</h1>
+<ul>
+<li><p>Encarregats de resoldre i donar identitat.</p></li>
+<li><p>Configurats per actuar envers el host <strong>192.168.2.44</strong></p></li>
+</ul>
+<pre><code>gandhi      IN      A       192.168.2.44
+dns         CNAME           gandhi
+dhcp        CNAME           gandhi  
+ldap        CNAME           gandhi
+kserver     CNAME           gandhi
+homes       CNAME           gandhi
+samba       CNAME           gandhi
+nfs         CNAME           gandhi
+ssh         CNAME           gandhi
+http        CNAME           gandhi</code></pre>
+</div>
+<div id="execució" class="slide section level1">
+<h1>EXECUCIÓ</h1>
+<ul>
+<li>Fitxer de configuració <code>docker-compose.yml</code>.</li>
+</ul>
+<p><strong>EXEMPLE</strong></p>
+<pre><code>
+</code></pre>
+</div>
+<div id="scripting" class="slide section level1">
+<h1>SCRIPTING</h1>
+<h2 id="injecció-i-esborrat-dusuaris">INJECCIÓ I ESBORRAT D’USUARIS</h2>
+<ul>
+<li><p>Format <strong>/etc/passwd</strong></p></li>
+<li><p>Per tenir un compte d’usuari actiu i que funcioni correctament, fan falta <strong>4 passos</strong>:</p>
+<ul>
+<li><p>CREACIÓ COMPTE USUARI A LDAP</p></li>
+<li><p>CREACIÓ PRINCIPAL KERBEROS</p></li>
+<li><p>CREACIÓ COMPTE SAMBA</p></li>
+<li><p>CREACIÓ HOME</p></li>
+</ul></li>
+</ul>
+</div>
+<div id="scripting-1" class="slide section level1">
+<h1>SCRIPTING</h1>
+<h2 id="injecció-i-esborrat-de-grups">INJECCIÓ I ESBORRAT DE GRUPS</h2>
+<ul>
+<li><p>Format <strong>/etc/group</strong>.</p></li>
+<li><p>Per crear un grup correctament fan falta fer <strong>2 pasos</strong>:</p>
+<ul>
+<li><p>CREACIÓ GRUP AL SERVIDOR LDAP</p></li>
+<li><p>CREACIÓ DIRECTORI GRUP</p></li>
+</ul></li>
+</ul>
+</div>
+<div id="part-pràctica" class="slide section level1">
+<h1>Part Pràctica</h1>
+<p><img src="hello.gif" /></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+# GANDHI RELOAD
+## @edt ASIX M14-PROJECTE Curs 2018-2019
+## Èric Escribà
+
+### SERVIDOR DNS
+
