@@ -163,7 +163,7 @@ total 4
 * En la instal·lació està configurat el següent:
 
 ```
-echo "192.168.2.44 ldap.edt.org kserver.edt.org samba.edt.org" >> /etc/hosts
+echo "192.168.2.44 ldap.edt.org kserver.edt.org nfs.edt.org" >> /etc/hosts
 ```
 
 * Això es deu a que docker no es capaç de poder resoldre a travès d'un **dns exterior** al del propi docker i per tant s'han de mapejar els noms dels servidors en comptes de que ho faci el nostre servidor dns.
