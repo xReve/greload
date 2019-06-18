@@ -1,4 +1,7 @@
-# DNS SERVER
+# GANDHI RELOAD
+## @edt ASIX M14-PROJECTE Curs 2018-2019
+## Èric Escribà
+# Dockerfile DNS SERVER
 # -------------------------------------
 FROM fedora:27
 LABEL author="ERIC ESCRIBA"

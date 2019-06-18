@@ -16,8 +16,3 @@
 /usr/sbin/rpc.mountd -F
 
 
-#while [ 1 ]
-#do
-#  a=1
-#done
-

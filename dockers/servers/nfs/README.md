@@ -15,13 +15,32 @@
 * Per definir quins recursos exporta el servidor, hem de definir-ho al `/etc/exports`:
 
 ```
-/home/grups 192.168.*.*(rw,sync)
+/home/grups 192.168.2.0/16(rw,sync,root_squash)
 ```
 
-* En aquest cas, com que volem que els homes s'exportin en un host el qual els clients atacaran, ho definim de la manera en que ho exporti per la xarxa 192.168.x.x de forma
-que pugin escriure i que els canvis es guardin al disc una vegada fets. 
+**rw** -> El client tindrà permisos de **lectura i escriptura** sobre el recurs compartit.
 
-* Pel que respecta al servidor, per poder obtenir tot el que volem, es necessari tenir activats uns quant serveis:
+**sync** -> Els canvis que s'efectuen a les dades és guarden al moment en el disc.
+
+**root_squash** -> Mitjançant aquesta opció quan un client que estigui com usuari **root** vulgi montar el recurs compartit, l'usuari **root** es transformarà en l'usuari **nobody** per tal de treure-l'hi els permisos i d'aquesta manera no poder accedir al recurs.
+
+* Exportem el recurs **/home/grups/** a la xarxa **192.168.2.0/16** que és on tenim els clients.
+
+* Com que no treballem en diferentes xarxes pels clients s'ha configurat nomès la xarxa **.2** i tots els clients es connecten allí.
+
+* En cas de tenir **diverses xarxes**, el fitxer d'exportacions podria canviar depenent del grup i la xarxa en que pertanyi.
+
+```
+/home/grups/hisx1 192.168.3.0/16(rw,sync,root_squash)
+/home/grups/hisx2 192.168.2.0/16(rw,sync,root_squash)
+/home/grups/wiam1 192.168.4.0/16(rw,sync,root_squash) 
+/home/grups/wiam2 192.168.5.0/16(rw,sync,root_squash)
+/home/grups/wiaw1 192.168.6.0/16(rw,sync,root_squash)
+/home/grups/wiaw2 192.168.7.0/16(rw,sync,root_squash)
+/home/grups/profes 192.168.10.0/16(rw,sync,root_squash)
+```
+
+* Pel que respecta al servidor, per poder obtenir l'exportació dels recursos i el funcionament dels serveis, es necessari tenir activat el següent
 
 ```
 /usr/sbin/rpcbind && echo "rpcbind Ok"
@@ -59,13 +78,19 @@ Una sol·licitud MNT té dos arguments: un argument explícit que conté el cam�
 
 Quan es rep una sol·licitud MNT d'un client NFS, rpc.mountd comprova la ruta i l'adreça IP del remitent contra la seva taula d'exportació. Si l’emissor té permís per accedir a l’exportació sol·licitada, rpc.mountd retorna al client el maneig del fitxer NFS del directori arrel de l’exportació. El client pot utilitzar les sol·licituds de fitxer arrel i NFS LOOKUP per navegar per l’estructura de directoris de l’exportació.
 
+* Una vegada està tot activat exportem els recursos:
+
+```
+/usr/sbin/exportfs -av
+```
+
+### ALTRES PUNTS
 
 * Aquest servidor està dissenyat per funcionar en mode **detach**:
 
 ```
-/usr/sbin/rpc.mountd -V 3 -F
+/usr/sbin/rpc.mountd -F
 ```
-
 
 * En cas de voler ser **executat** sense cap altre component, és pot fer de la següent manera:
 

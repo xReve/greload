@@ -1,6 +1,8 @@
 #! /bin/bash
-# 2018-2019
-# HOMES
+# GANDHI RELOAD
+## @edt ASIX M14-PROJECTE Curs 2018-2019
+## Èric Escribà
+# INSTALL DOCKER HOMES
 # -----------------------------------------------------------
 
 mkdir /opt/docker/usuaris/insertUser/error_log
