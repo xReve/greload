@@ -5,7 +5,7 @@
 # Install HOST FISIC
 # -------------------------------------
 
-dnf -y install procps passwd openldap-clients nss-pam-ldapd authconfig pam_mount nfs-utils iputils pam_krb5 krb5-workstation dhclient iproute nmap bind-utils
+RUN dnf -y install krb5-workstation passwd cifs-utils authconfig pam_krb5 openssh-clients nss-pam-ldapd procps pam_mount iputils iproute dhclient bind-utils
 
 # COPY FILES
 
