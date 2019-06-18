@@ -16,7 +16,7 @@ cp ldap.conf /etc/openldap/ldap.conf
 cp krb5.conf /etc/krb5.conf
 
 cp pam_mount.conf.xml /etc/security/pam_mount.conf.xml
-cp system-auth /etc/pam.d/system-auth
+cp system-auth /etc/pam.d/system-auth-ac
 
 cp resolv.conf /etc/resolv.conf
 cp sssd.conf /etc/sssd/sssd.conf

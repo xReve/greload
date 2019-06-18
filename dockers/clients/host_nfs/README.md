@@ -27,3 +27,29 @@ Atenció: senmbla que el client no engega cap dels serveis relacionats amb nfs-u
 
 
 
+
+```
+[root@nfshost docker]# su - iamuser60
+Creating directory '/home/grups/wiam2/iamuser60'.
+reenter password for pam_mount:
+[iamuser60@nfshost ~]$ df -h
+Filesystem                               Size  Used Avail Use% Mounted on
+overlay                                   98G   13G   81G  14% /
+tmpfs                                    7.8G     0  7.8G   0% /dev
+tmpfs                                    7.8G     0  7.8G   0% /sys/fs/cgroup
+/dev/sda5                                 98G   13G   81G  14% /etc/hosts
+shm                                       64M     0   64M   0% /dev/shm
+nfs.edt.org:/home/grups/wiam2/iamuser60   98G   29G   65G  32% /home/grups/wiam2/iamuser60/iamuser60
+[iamuser60@nfshost ~]$ ll
+total 4
+drwxr-xr-x. 2 iamuser60 wiam2 4096 Jun 18 08:25 iamuser60
+[iamuser60@nfshost ~]$ ll iamuser60/
+total 4
+-rw-r--r--. 1 iamuser60 wiam2 33 Jun 18 08:25 welcome.md
+[iamuser60@nfshost ~]$ pwd
+/home/grups/wiam2/iamuser60
+```
+
+
+
+
