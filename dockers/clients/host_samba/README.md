@@ -87,6 +87,13 @@ session sufficient 	pam_krb5.so
 session sufficient 	pam_unix.so
 ```
 
+* Important activar els següents serveis per obtenir les dades del servidor LDAP:
+
+```
+/usr/sbin/nslcd && echo "nslcd Ok"
+/usr/sbin/nscd && echo "nscd Ok"
+```
+
 
 ### COMPROVACIÓ
 

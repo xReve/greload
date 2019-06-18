@@ -68,24 +68,35 @@ Aquests estàn localitzats en una xarxa interna de **docker**, cal destacar que 
  
 ### ALTRES PUNTS
 
-* **EXPLICACIÓ DEL CONTINGUT EN CADA DIRECTORI**
-
-* **SEGUIMENT DEL PROJECTE EN EL FITXER** `seguiment.md`
-
 * Les imatges pertinents de cada contenidor Docker es troben emmagatzemades a [dockerhub](https://hub.docker.com/u/eescriba/)
 
-* Directori `aux` on és guarda contingut adicional al projecte
-
-aesborrar -> 
-**EXECUCIÓ DOCKERS**
-
-docker run --rm --name shost.edt.org -h shost.edt.org --network gandhi-net --privileged -it eescriba/sambahost:greload
+* Directori `aux` on és guarda contingut adicional al projecte. (**seguiment**,**presentació**,**vídeo**...)
 
 
-docker run --rm --name nfshost.edt.org -h nfshost.edt.org --network gandhi-net --privileged -it eescriba/nfshost:greload
+### CONCLUSIONS
 
+* Pel que respecten als objectius inicials del projecte, s'han aconseguit la major part d'ells.
 
+* S'ha aconseguit la estructura d'autenticació amb les eines **ldap** i **kerberos**, el montatge dels **homes** ja sigui via **cifs** o **nfs** ens els hosts de **docker** i **físics**, el funcionament del servidor **dns**, capaç de resoldre els noms dels servidors i fer que tot apunti contra el mateix host on està el desplegament d'aquests i els servidors **ssh** i **http** estàn en funcionament. 
 
+* Pel que respecta als objectius **no** assolits trobem: el funcionament del servidor **dhcp**,el funcionament del servidor **dns** dins dels hosts **dockers**, implementar la seguretat en els mounts dels **homes** i no permetre a **root** fer-ho. 
 
+* En resum, els clients no estàn en una xarxa creada pel servidor **dhcp** ja que aquest no es capaç de donar **ip** fora de la seva xarxa interna; els clients dels hosts **docker** no poden utilitzar el **dns**configurat ja que docker no deixa accedir-hi.
+
+* La secció d'scripts ha resultat un èxit, he pogut duur a terme les tasques demanades amb eficàcia.
+
+### MILLORES
+
+* Buscar la forma en que el servidor **dhcp** doni ip fora de la seva xarxa. 
+
+* Intentar resoldre el problema del **dns** pels dockers, tot i que he buscat informació i molta més gent ha tingut aquest problema i no ho han pogut resoldre.
+
+* Implementar la seguretat perquè root no pugi montar els **homes** i tindre total accès. No obstant s'ha aplicat la opció de **root_squash** per treure els permisos a root però no ha funcionat.
+
+* El servidor **ssh** està configurat perquè sigui kerberitzat però no incorpora un mount del **home** de l'usuari, es podria afegir.
+
+* El servidor **http** està configurat perquè escolti en el port **80** i mostri la presentació del projecte. Aquest servidor podria contenir una plataforma com la de l'escola amb seccions i zona d'autenticació. A més a més es podria configurar la versió segura del servidor amb certificats.
+
+* Investigar el perquè de la connexió **lenta** contra kerberos en el docker homes quan utilitza el **dns** de docker.
 
 

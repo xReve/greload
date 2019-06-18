@@ -87,6 +87,7 @@ Removing network dockers_gandhi-net
 ### ALTRES PUNTS
 
 * Els servidors es troben en una xarxa interna de docker, en concret és la **172.30.0.0/16** la qual està definida al `docker-compose.yml`.
+
 * Estem utilitzant la **versió 2** del docker-compose per la utilització d'opcions més concretes per al desplegament dels servidors. 
 
 * En aquesta versió no és possible definir un **hostname** als contenidors ni un **network_name** a la xarxa interna.
@@ -96,6 +97,5 @@ Removing network dockers_gandhi-net
 * A més a més en aquesta versió es pot configurar les opcions de la xarxa així podent definir la xarxa que nosaltres vulgem i el seu **gateway**.
 
 * Els clients no estàn inclosos en l'execució del docker-compose ja que aquests no estàn en la mateixa xarxa. 
-
 
 

@@ -1,5 +1,10 @@
-## SEGUIMENT PROJECTE GANDHI RELOAD
-### Eric Escriba
+# GANDHI RELOAD
+## @edt ASIX M14-PROJECTE Curs 2018-2019
+## Èric Escribà
+
+
+### SEGUIMENT PROJECTE GANDHI RELOAD
+
 
 * **SETMANA 1**
 
@@ -61,5 +66,8 @@ Pel que fa al client **nfs** encara no he trobat la sol·lució al problema.
 A tot aixo hem queda pendent acabar aquests dockers i documentar tot el fet.
 
 
+* **SETMANES FINALS**
+
+* Documentar i més documentar tot el treball realitzat i anar fent comprovacions a l'aula sobre el funcionament de la estructura.
 
 
