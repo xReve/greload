@@ -164,8 +164,6 @@ VOLUME /home
 
 * Zona d'scripting
 
-
-
 ---
 
 # SERVIDOR SAMBA
@@ -191,22 +189,49 @@ shm                         64M     0   64M   0% /dev/shm
 //samba/iamuser60  370G  144G  227G  39% /home/grups/wiam2/iamuser60/iamuser60
 ```
 
+---
+
+# SERVIDOR SAMBA
+
+* Incorporació servidor **SSH**
+
+```
+/usr/sbin/smbd && echo "smb Ok" 
+/usr/sbin/nmbd && echo "nmb  Ok" 
+
+/usr/sbin/sshd -D
+```
+
 
 ---
 
 # SERVIDOR NFS
 
-**EXEMPLE**
+**/etc/exports**
 
+```
+/home/grups 192.168.2.0/16(rw,sync,root_squash)
+```
 
+* Diverses xarxes
+
+```
+/home/grups/hisx1 192.168.3.0/16(rw,sync,root_squash)
+/home/grups/hisx2 192.168.2.0/16(rw,sync,root_squash)
+/home/grups/wiam1 192.168.4.0/16(rw,sync,root_squash) 
+/home/grups/wiam2 192.168.5.0/16(rw,sync,root_squash)
+/home/grups/wiaw1 192.168.6.0/16(rw,sync,root_squash)
+/home/grups/wiaw2 192.168.7.0/16(rw,sync,root_squash)
+/home/grups/profes 192.168.10.0/16(rw,sync,root_squash)
+```
 
 ---
 
-
-# SERVIDOR DNS I DHCP
-
+# SERVIDOR DNS
 
 * Encarregats de resoldre i donar identitat.
+
+* Tot fa referència a **gandhi**.
 
 * Configurats per actuar envers el host **192.168.2.44**
 
@@ -225,17 +250,43 @@ http 		CNAME 			gandhi
 
 ---
 
-
 # EXECUCIÓ
 
 * Fitxer de configuració `docker-compose.yml`.
 
+`docker-compose up -d`
+
 **EXEMPLE**
 
 ```
-
-
+Creating network "dockers_gandhi-net" with the default driver
+Creating dns.edt.org ... 
+Creating dns.edt.org ... done
+Creating dhcp.edt.org ... 
+Creating dhcp.edt.org ... done
+Creating ldap.edt.org ... 
+Creating ldap.edt.org ... done
+Creating kserver.edt.org ... 
+Creating kserver.edt.org ... done
+Creating homes.edt.org ... 
+Creating homes.edt.org ... done
+Creating samba.edt.org ... 
+Creating samba.edt.org ... done
+Creating nfs.edt.org ... 
+Creating nfs.edt.org ... done
+Creating sshd.edt.org ... 
+Creating sshd.edt.org ... done
+Creating http.edt.org ... 
+Creating http.edt.org ... done
 ```
+
+---
+
+# CLIENTS
+
+* 2 CLIENTS: **nfs** i **samba**
+
+* Representació en **docker** i en **físic**
 
 ---
 
@@ -260,6 +311,23 @@ http 		CNAME 			gandhi
 
 # SCRIPTING
 
+## INJECCIÓ I ESBORRAT D'USUARIS
+
+* Scripts a prova de:
+
+	- Una mala connexió amb LDAP
+	
+	- Usuari existent a LDAP / Usuari inexistent
+	
+	- L'usuari no té un grup existent a LDAP
+	
+	- La linia d'usuari està mal escrita
+
+---
+
+
+# SCRIPTING
+
 ## INJECCIÓ I ESBORRAT DE GRUPS
 
 * Format **/etc/group**.
@@ -270,6 +338,21 @@ http 		CNAME 			gandhi
 	
 	- CREACIÓ DIRECTORI GRUP
 
+---
+
+# SCRIPTING
+
+## INJECCIÓ I ESBORRAT DE GRUPS
+
+* Scripts a prova de:
+
+	- Una mala connexió amb el servidor LDAP
+	
+	- El grup ja està en el servidor LDAP / No està
+	
+	- La línia del grup està mal escrita
+	
+	- Grup contè usuaris
 
 ---
 

@@ -167,14 +167,36 @@ tmpfs                      3.9G     0  3.9G   0% /sys/fs/cgroup
 shm                         64M     0   64M   0% /dev/shm
 //samba/iamuser60  370G  144G  227G  39% /home/grups/wiam2/iamuser60/iamuser60</code></pre>
 </div>
+<div id="servidor-samba-1" class="slide section level1">
+<h1>SERVIDOR SAMBA</h1>
+<ul>
+<li>Incorporació servidor <strong>SSH</strong></li>
+</ul>
+<pre><code>/usr/sbin/smbd &amp;&amp; echo &quot;smb Ok&quot; 
+/usr/sbin/nmbd &amp;&amp; echo &quot;nmb  Ok&quot; 
+
+/usr/sbin/sshd -D</code></pre>
+</div>
 <div id="servidor-nfs" class="slide section level1">
 <h1>SERVIDOR NFS</h1>
-<p><strong>EXEMPLE</strong></p>
+<p><strong>/etc/exports</strong></p>
+<pre><code>/home/grups 192.168.2.0/16(rw,sync,root_squash)</code></pre>
+<ul>
+<li>Diverses xarxes</li>
+</ul>
+<pre><code>/home/grups/hisx1 192.168.3.0/16(rw,sync,root_squash)
+/home/grups/hisx2 192.168.2.0/16(rw,sync,root_squash)
+/home/grups/wiam1 192.168.4.0/16(rw,sync,root_squash) 
+/home/grups/wiam2 192.168.5.0/16(rw,sync,root_squash)
+/home/grups/wiaw1 192.168.6.0/16(rw,sync,root_squash)
+/home/grups/wiaw2 192.168.7.0/16(rw,sync,root_squash)
+/home/grups/profes 192.168.10.0/16(rw,sync,root_squash)</code></pre>
 </div>
-<div id="servidor-dns-i-dhcp" class="slide section level1">
-<h1>SERVIDOR DNS I DHCP</h1>
+<div id="servidor-dns" class="slide section level1">
+<h1>SERVIDOR DNS</h1>
 <ul>
 <li><p>Encarregats de resoldre i donar identitat.</p></li>
+<li><p>Tot fa referència a <strong>gandhi</strong>.</p></li>
 <li><p>Configurats per actuar envers el host <strong>192.168.2.44</strong></p></li>
 </ul>
 <pre><code>gandhi      IN      A       192.168.2.44
@@ -193,9 +215,34 @@ http        CNAME           gandhi</code></pre>
 <ul>
 <li>Fitxer de configuració <code>docker-compose.yml</code>.</li>
 </ul>
+<p><code>docker-compose up -d</code></p>
 <p><strong>EXEMPLE</strong></p>
-<pre><code>
-</code></pre>
+<pre><code>Creating network &quot;dockers_gandhi-net&quot; with the default driver
+Creating dns.edt.org ... 
+Creating dns.edt.org ... done
+Creating dhcp.edt.org ... 
+Creating dhcp.edt.org ... done
+Creating ldap.edt.org ... 
+Creating ldap.edt.org ... done
+Creating kserver.edt.org ... 
+Creating kserver.edt.org ... done
+Creating homes.edt.org ... 
+Creating homes.edt.org ... done
+Creating samba.edt.org ... 
+Creating samba.edt.org ... done
+Creating nfs.edt.org ... 
+Creating nfs.edt.org ... done
+Creating sshd.edt.org ... 
+Creating sshd.edt.org ... done
+Creating http.edt.org ... 
+Creating http.edt.org ... done</code></pre>
+</div>
+<div id="clients" class="slide section level1">
+<h1>CLIENTS</h1>
+<ul>
+<li><p>2 CLIENTS: <strong>nfs</strong> i <strong>samba</strong></p></li>
+<li><p>Representació en <strong>docker</strong> i en <strong>físic</strong></p></li>
+</ul>
 </div>
 <div id="scripting" class="slide section level1">
 <h1>SCRIPTING</h1>
@@ -213,6 +260,19 @@ http        CNAME           gandhi</code></pre>
 </div>
 <div id="scripting-1" class="slide section level1">
 <h1>SCRIPTING</h1>
+<h2 id="injecció-i-esborrat-dusuaris-1">INJECCIÓ I ESBORRAT D’USUARIS</h2>
+<ul>
+<li><p>Scripts a prova de:</p>
+<ul>
+<li><p>Una mala connexió amb LDAP</p></li>
+<li><p>Usuari existent a LDAP / Usuari inexistent</p></li>
+<li><p>L’usuari no té un grup existent a LDAP</p></li>
+<li><p>La linia d’usuari està mal escrita</p></li>
+</ul></li>
+</ul>
+</div>
+<div id="scripting-2" class="slide section level1">
+<h1>SCRIPTING</h1>
 <h2 id="injecció-i-esborrat-de-grups">INJECCIÓ I ESBORRAT DE GRUPS</h2>
 <ul>
 <li><p>Format <strong>/etc/group</strong>.</p></li>
@@ -220,6 +280,19 @@ http        CNAME           gandhi</code></pre>
 <ul>
 <li><p>CREACIÓ GRUP AL SERVIDOR LDAP</p></li>
 <li><p>CREACIÓ DIRECTORI GRUP</p></li>
+</ul></li>
+</ul>
+</div>
+<div id="scripting-3" class="slide section level1">
+<h1>SCRIPTING</h1>
+<h2 id="injecció-i-esborrat-de-grups-1">INJECCIÓ I ESBORRAT DE GRUPS</h2>
+<ul>
+<li><p>Scripts a prova de:</p>
+<ul>
+<li><p>Una mala connexió amb el servidor LDAP</p></li>
+<li><p>El grup ja està en el servidor LDAP / No està</p></li>
+<li><p>La línia del grup està mal escrita</p></li>
+<li><p>Grup contè usuaris</p></li>
 </ul></li>
 </ul>
 </div>
