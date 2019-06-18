@@ -37,13 +37,49 @@
 * Per posar-ho en funcionament utilitzarem la ordre `docker-compose up -d`
 
 ```
-
+Creating network "dockers_gandhi-net" with the default driver
+Creating dns.edt.org ... 
+Creating dns.edt.org ... done
+Creating dhcp.edt.org ... 
+Creating dhcp.edt.org ... done
+Creating ldap.edt.org ... 
+Creating ldap.edt.org ... done
+Creating kserver.edt.org ... 
+Creating kserver.edt.org ... done
+Creating homes.edt.org ... 
+Creating homes.edt.org ... done
+Creating samba.edt.org ... 
+Creating samba.edt.org ... done
+Creating nfs.edt.org ... 
+Creating nfs.edt.org ... done
+Creating sshd.edt.org ... 
+Creating sshd.edt.org ... done
+Creating http.edt.org ... 
+Creating http.edt.org ... done
 ```
 
 * Per parar la estructura utilitzarem la ordre `docker-compose down` tenint en compte que aquesta ordre borrarà qualsevol canvi fet en els contenidors i tornaran a estar igual que abans de la execució.
 
 ```
-
+Stopping http.edt.org    ... done
+Stopping sshd.edt.org    ... done
+Stopping nfs.edt.org     ... done
+Stopping samba.edt.org   ... done
+Stopping homes.edt.org   ... done
+Stopping kserver.edt.org ... done
+Stopping ldap.edt.org    ... done
+Stopping dhcp.edt.org    ... done
+Stopping dns.edt.org     ... done
+Removing http.edt.org    ... done
+Removing sshd.edt.org    ... done
+Removing nfs.edt.org     ... done
+Removing samba.edt.org   ... done
+Removing homes.edt.org   ... done
+Removing kserver.edt.org ... done
+Removing ldap.edt.org    ... done
+Removing dhcp.edt.org    ... done
+Removing dns.edt.org     ... done
+Removing network dockers_gandhi-net
 ```
 
 
@@ -51,7 +87,6 @@
 ### ALTRES PUNTS
 
 * Els servidors es troben en una xarxa interna de docker, en concret és la **172.30.0.0/16** la qual està definida al `docker-compose.yml`.
-
 * Estem utilitzant la **versió 2** del docker-compose per la utilització d'opcions més concretes per al desplegament dels servidors. 
 
 * En aquesta versió no és possible definir un **hostname** als contenidors ni un **network_name** a la xarxa interna.

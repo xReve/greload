@@ -1,0 +1,125 @@
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  color: black;
+  font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
+  font-size: 12px;
+  line-height: 1.7;
+  padding: 1em;
+  margin: auto;
+  max-width: 42em;
+  background-color: #76C4F5;
+}
+
+.author {
+  font-size: 1.2em;
+  color: blue;
+  text-align: center;
+}
+
+
+h1 {
+	text-align: center;
+}
+
+h2 {
+	font-size: 35px;
+}
+
+#seccions-i-objectius {
+	margin-top: 50px;
+}
+
+#seccions-i-objectius li {
+	padding-top: 10px;
+	padding-left: 20px;
+	}
+
+p img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 27.5%;
+	border-radius: 8px;
+}
+
+#servidors {
+	margin-top: 40px;
+}
+
+#servidor-ldap-2 {
+	margin-top: 40px;
+}
+
+
+#servidor-ldap-3 {
+	margin-top: 40px;
+}
+
+
+#servidor-kerberos {
+	margin-top: 40px;
+}
+
+#servidor-kerberos li {
+	padding-top: 10px;
+	padding-left: 15px;
+}
+
+#zona-homes {
+	margin-top: 40px;
+}
+
+#zona-homes li {
+	padding-top: 10px;
+	padding-left: 15px;
+}
+
+#servidor-samba {
+	margin-top: 40px;
+}
+
+#servidor-samba li {
+	padding-top: 10px;
+	padding-left: 15px;
+}
+
+#servidor-nfs {
+	margin-top: 40px;
+}
+
+#servidor-dns li {
+	padding-top: 10px;
+	padding-left: 15px;
+}
+
+#servidor-dns-i-dhcp {
+	margin-top: 40px;
+}
+
+
+#servidor-dns-i-dhcp li{
+	padding-top: 10px;
+	padding-left: 15px;
+}
+
+#execució {
+	margin-top: 40px;
+}
+
+
+#scripting {
+	margin-top: 40px;
+}
+
+#scripting-1 {
+	margin-top: 40px;
+}
+
+#part-pràctica {
+	margin-top: 40px;
+}

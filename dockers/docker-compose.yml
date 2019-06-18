@@ -86,6 +86,16 @@ services:
       - nfs
     networks:
       - gandhi-net
+  http:
+    container_name: http.edt.org
+    ports:
+      - "80:80"
+    image: eescriba/httpserver:greload
+    privileged: true
+    depends_on: 
+      - sshd
+    networks:
+      - gandhi-net
 networks:
   gandhi-net:
     ipam:
