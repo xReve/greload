@@ -5,7 +5,7 @@
 
 ### OBJECTIU
 
-* L’objectiu d’aquest projecte és generar un model similar a **gandhi** de l’Escola del Treball però amb cada un dels components separator en contenidors Docker. 
+* L’objectiu d’aquest projecte és generar un model similar a **gandhi** de l’Escola del Treball però amb cada un dels components separats en containers Docker. 
 
 * **Gandhi** és el nom otorgat a l'estructura informàtica de l'escola la qual incorpora un servidor **LDAP**,servidor **KERBEROS**,servidor **NFS**,servidor **DNS** entre d'altres. 
 

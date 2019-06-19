@@ -321,7 +321,7 @@ Creating http.edt.org ... done
 	
 	- L'usuari no té un grup existent a LDAP
 	
-	- La línia d'usuari està mal escrita
+	- La linia d'usuari està mal escrita
 
 ---
 

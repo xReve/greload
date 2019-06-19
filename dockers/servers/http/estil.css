@@ -15,6 +15,7 @@ body {
   background-color: #76C4F5;
 }
 
+
 .author {
   font-size: 1.2em;
   color: blue;
@@ -39,6 +40,9 @@ h2 {
 	padding-left: 20px;
 	}
 
+#estructura-informàtica {
+	margin-top: 40px;
+}
 p img {
 	display: block;
 	margin-left: auto;
@@ -48,21 +52,25 @@ p img {
 }
 
 #servidors {
-	margin-top: 40px;
+	margin-top: 50px;
+}
+
+#servidor-ldap-1 {
+	margin-top: 50px;
 }
 
 #servidor-ldap-2 {
-	margin-top: 40px;
+	margin-top: 50px;
 }
 
 
 #servidor-ldap-3 {
-	margin-top: 40px;
+	margin-top: 50px;
 }
 
 
 #servidor-kerberos {
-	margin-top: 40px;
+	margin-top: 50px;
 }
 
 #servidor-kerberos li {
@@ -71,7 +79,7 @@ p img {
 }
 
 #zona-homes {
-	margin-top: 40px;
+	margin-top: 50px;
 }
 
 #zona-homes li {
@@ -80,7 +88,11 @@ p img {
 }
 
 #servidor-samba {
-	margin-top: 40px;
+	margin-top: 50px;
+}
+
+#servidor-samba-1 {
+	margin-top: 50px;
 }
 
 #servidor-samba li {
@@ -89,7 +101,7 @@ p img {
 }
 
 #servidor-nfs {
-	margin-top: 40px;
+	margin-top: 50px;
 }
 
 #servidor-dns li {
@@ -97,29 +109,48 @@ p img {
 	padding-left: 15px;
 }
 
-#servidor-dns-i-dhcp {
-	margin-top: 40px;
+#servidor-dns {
+	margin-top: 50px;
 }
 
 
-#servidor-dns-i-dhcp li{
+#servidor-dns li {
 	padding-top: 10px;
 	padding-left: 15px;
 }
 
-#execució {
-	margin-top: 40px;
+#servidor-http-i-ssh {
+	margin-top: 50px;
 }
 
+#execució {
+	margin-top: 50px;
+}
+
+#clients {
+	margin-top: 50px;
+}
+
+#clients li {
+	padding-top: 15px;
+	padding-left: 15px;
+}
 
 #scripting {
-	margin-top: 40px;
+	margin-top: 50px;
 }
 
 #scripting-1 {
-	margin-top: 40px;
+	margin-top: 50px;
 }
 
+#scripting-2 {
+	margin-top: 50px;
+}
+
+#scripting-3 {
+	margin-top: 50px;
+}
 #part-pràctica {
-	margin-top: 40px;
+	margin-top: 50px;
 }
