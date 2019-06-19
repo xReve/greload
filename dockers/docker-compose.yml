@@ -76,26 +76,14 @@ services:
       - homes
     networks:
       - gandhi-net
-  sshd:
-    container_name: sshd.edt.org
-    ports: 
-      - "1022:22"
-    image: eescriba/sshdserver:greload
-    volumes_from:
-      - homes
-    privileged: true
-    depends_on:
-      - nfs
-    networks:
-      - gandhi-net
   http:
     container_name: http.edt.org
     ports:
       - "80:80"
     image: eescriba/httpserver:greload
     privileged: true
-    depends_on: 
-      - sshd
+    depends_on:
+      - nfs
     networks:
       - gandhi-net
 networks:
